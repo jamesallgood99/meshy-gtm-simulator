@@ -34,7 +34,7 @@ The brief Claude would extract from them, and the three message directions, are 
 
 ## Demo data: walk through it without a key
 
-The dashboard opens as if the market had run once, so every page can be explored without an API key: Compare, Score, Talk, Stress, Adoption and Competition all have results. **The demo is not model output.** Scores come from a simple, transparent heuristic in `market/make_demo_results.py` (theme fit with each persona's pains, whether the framing serves their role, proof in the message, skepticism), and reactions are canned lines per role. The dashboard says so on every page. Add a Claude API key to replace it with a live run.
+The dashboard opens as if the market had run once, so every page can be explored without an API key: Compare, Score, Talk, Stress, Adoption, Competition and Channels all have results. **The demo is not model output.** Scores come from a simple, transparent heuristic in `market/make_demo_results.py` (theme fit with each persona's pains, whether the framing serves their role, proof in the message, skepticism), and reactions are canned lines per role. The dashboard says so on every page. Add a Claude API key to replace it with a live run.
 
 The demo's shape is the hypothesis a live run tests. Variant A (Pipeline) lands best overall and wins art directors, tech artists and CTOs, but it loses the roles that can block a deal: environment and senior artists, legal and InfoSec, all to Variant B (Control). Variant C (Craft) wins freelancers and artists but can't carry legal or procurement.
 
@@ -55,6 +55,7 @@ Open **Settings** and paste a [Claude API key](https://console.anthropic.com). T
 | **Stress** | Your toughest critics attack the weakest claim, and you get a rewrite that survives | 1 call |
 | **Adoption** | How each persona takes to each capability at 90 days and 12 months | about 10 calls at 50 personas |
 | **Competition** | Meshy's message for each capability against each competitor's, scored blind | about 54 calls at 50 personas |
+| **Channels** | Where each persona is most receptive to one message across 12 channels: paid social, LinkedIn, search, video, email, trade press, message boards, creators, events, podcasts, billboards and TV. Read by segment or role, with the blockers' best channel flagged | 12 calls at 48 personas |
 
 ## Rebuild the market
 

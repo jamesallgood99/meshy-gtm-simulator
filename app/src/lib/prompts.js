@@ -360,3 +360,56 @@ export const MAP_COMPETITOR_TOOL = {
     required: ['positioning', 'messages'],
   },
 };
+
+// ---- Channels ----
+
+export function channelSystem(market, channels) {
+  return `You run a synthetic market of buyers for: ${market.product_category}.
+You are estimating where each persona would be most receptive to one marketing message: the same words, delivered through different channels.
+
+${HONESTY_RULES}
+
+Channels:
+${channels.map((c) => `- ${c.id}: ${c.label} (${c.detail})`).join('\n')}
+
+For every persona and every channel, record receptivity (0-100): how likely this message, met in this channel during a normal week, gets their attention and a next step.
+Think about where this person actually spends time, at work and outside it; how much they trust each channel (many artists distrust AI ads in their feeds, legal and InfoSec ignore social entirely, procurement reads email and little else); whether the format fits the message; and whether the channel reaches them at the moment they have the problem.
+Most people are reachable in two or three channels and close to unreachable in the rest. Mass channels (billboards, TV) rarely reach niche B2B roles.
+Add a note: one short sentence in the persona's own voice about meeting this message in that channel.`;
+}
+
+export function channelUser({ message, product, channels, personas }) {
+  return `${product ? `What the company sells: ${product}\n\n` : ''}Message:
+"""
+${message}
+"""
+
+Personas:
+${personas.map((p) => personaCard(p)).join('\n')}
+
+Record one row per persona per channel (${personas.length * channels.length} rows) with the record_channels tool.`;
+}
+
+export const CHANNEL_TOOL = {
+  name: 'record_channels',
+  description: 'Record how receptive each persona is to the message in each channel.',
+  input_schema: {
+    type: 'object',
+    properties: {
+      rows: {
+        type: 'array',
+        items: {
+          type: 'object',
+          properties: {
+            persona_id: { type: 'string' },
+            channel_id: { type: 'string' },
+            receptivity: { type: 'integer', minimum: 0, maximum: 100 },
+            note: { type: 'string' },
+          },
+          required: ['persona_id', 'channel_id', 'receptivity', 'note'],
+        },
+      },
+    },
+    required: ['rows'],
+  },
+};

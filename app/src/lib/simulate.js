@@ -2,10 +2,11 @@ import { callClaude, toolInput, pool, text } from './anthropic.js';
 import {
   scoreSystem, scoreUser, SCORE_TOOL, stressSystem, stressUser, STRESS_TOOL, talkSystem,
   extractSystem, EXTRACT_TOOL, docsUserContent, messagesSystem, messagesUser, MESSAGES_TOOL,
-  adoptSystem, adoptUser, ADOPT_TOOL,
+  adoptSystem, adoptUser, ADOPT_TOOL, channelSystem, channelUser, CHANNEL_TOOL,
   competitionProduct, mapCompetitorSystem, mapCompetitorUser, MAP_COMPETITOR_TOOL,
 } from './prompts.js';
 import { anonymize } from './competition.js';
+import { CHANNELS } from './channels.js';
 
 const BATCH = 20;
 
@@ -248,4 +249,35 @@ export function parseCsv(textIn) {
     });
   }
   return results;
+}
+
+/**
+ * Channels: every persona in the sample rates one message in every channel. Small batches, since
+ * each persona returns a row per channel.
+ */
+const CHANNEL_BATCH = 4;
+export async function runChannels({ settings, market, product, variant, sample, onProgress, signal }) {
+  const batches = [];
+  for (let i = 0; i < sample.length; i += CHANNEL_BATCH) batches.push(sample.slice(i, i + CHANNEL_BATCH));
+  let done = 0;
+  const cids = new Set(CHANNELS.map((c) => c.id));
+  const clamp = (x) => Math.max(0, Math.min(100, Math.round(Number(x))));
+  const jobs = batches.map((batch) => async () => {
+    const res = await callClaude({
+      apiKey: settings.apiKey,
+      model: settings.model,
+      system: channelSystem(market, CHANNELS),
+      messages: [{ role: 'user', content: channelUser({ message: variant.message, product, channels: CHANNELS, personas: batch }) }],
+      tools: [CHANNEL_TOOL],
+      toolChoice: { type: 'tool', name: CHANNEL_TOOL.name },
+      maxTokens: 8000,
+      signal,
+    });
+    const ids = new Set(batch.map((p) => p.id));
+    return (toolInput(res, CHANNEL_TOOL.name).rows ?? [])
+      .filter((r) => ids.has(r.persona_id) && cids.has(r.channel_id))
+      .map((r) => ({ ...r, receptivity: clamp(r.receptivity) }));
+  });
+  const out = await pool(jobs, settings.concurrency ?? 3, () => onProgress?.(++done, batches.length));
+  return { variant_id: variant.id, message: variant.message, sample_ids: sample.map((p) => p.id), rows: out.flat() };
 }

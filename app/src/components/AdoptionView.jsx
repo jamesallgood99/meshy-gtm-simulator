@@ -132,7 +132,7 @@ export default function AdoptionView({ market, brief, adoption, live, busy, onRu
     <div className="row" style={{ justifyContent: 'space-between', marginBottom: 14 }}>
       <p className="note">
         {rows.length
-          ? `${features.length} features from ${brief.product_name} against ${adoption.sample_ids.length} personas, ${adoption.sample_ids.length / roles.length} per role.`
+          ? `${features.length} features from ${brief.product_name} against ${adoption.sample_ids.length} personas, equal by segment.`
           : `${features.length} features ready from ${brief.product_name}.`}
       </p>
       <button className="btn primary" disabled={busy} onClick={onRun}><Icon name="play" />{live ? (rows.length ? 'Run adoption again' : 'Run adoption') : 'Add an API key to run'}</button>

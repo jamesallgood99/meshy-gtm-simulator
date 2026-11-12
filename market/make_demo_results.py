@@ -389,6 +389,68 @@ def competition(personas):
     return comp
 
 
+# ---------------------------------------------------------------------------------------------
+# Channels: each persona in a 48-person sample rates each message in each channel.
+# Base affinity = how much this role lives in the channel and trusts it (0-1), from the persona
+# doc's channel map. The message's own pull (its Compare score for that persona) moves it up or down.
+# ---------------------------------------------------------------------------------------------
+CH = ["paid_social", "linkedin", "search", "video", "email", "newsletter", "boards", "creators", "events", "podcasts", "ooh", "tv"]
+AFFINITY = {  # social, linkedin, search, video, email, press, boards, creators, events, podcasts, billboards, tv
+    "maker":           [.75, .10, .60, .85, .25, .20, .75, .85, .35, .30, .20, .20],
+    "hobby_dev":       [.70, .10, .60, .85, .20, .25, .80, .85, .40, .30, .15, .20],
+    "student":         [.75, .30, .55, .85, .20, .20, .70, .80, .35, .30, .15, .20],
+    "solo_dev":        [.50, .35, .70, .80, .40, .50, .80, .75, .55, .50, .10, .10],
+    "freelancer":      [.55, .55, .50, .70, .35, .50, .70, .60, .45, .40, .10, .10],
+    "agent_builder":   [.30, .45, .75, .60, .40, .70, .80, .50, .45, .60, .05, .05],
+    "startup_founder": [.55, .75, .70, .50, .55, .55, .40, .40, .50, .55, .15, .10],
+    "print_shop":      [.70, .30, .75, .75, .45, .35, .70, .70, .45, .30, .15, .15],
+    "studio_head":     [.25, .75, .40, .35, .60, .75, .30, .20, .80, .60, .10, .10],
+    "art_director":    [.40, .60, .45, .60, .55, .70, .55, .45, .75, .45, .10, .10],
+    "env_artist":      [.30, .35, .30, .55, .20, .55, .60, .50, .50, .35, .05, .10],
+    "tech_artist":     [.25, .45, .60, .70, .40, .65, .75, .55, .70, .40, .05, .05],
+    "producer":        [.30, .70, .40, .40, .60, .70, .30, .25, .65, .55, .10, .10],
+    "vp_art":          [.20, .70, .30, .45, .50, .70, .30, .30, .85, .50, .10, .10],
+    "cto":             [.15, .60, .55, .45, .55, .70, .55, .25, .70, .55, .05, .05],
+    "rnd_lead":        [.30, .65, .60, .60, .60, .75, .60, .45, .80, .55, .05, .05],
+    "legal":           [.05, .50, .30, .15, .55, .70, .10, .05, .50, .35, .05, .05],
+    "infosec":         [.05, .45, .35, .20, .50, .65, .25, .05, .50, .40, .05, .05],
+    "procurement":     [.05, .55, .30, .10, .65, .45, .05, .05, .40, .20, .05, .05],
+    "senior_artist":   [.30, .35, .20, .50, .15, .50, .55, .45, .55, .35, .05, .10],
+}
+# Canned notes per channel: (receptive, not receptive). Not model output.
+CH_NOTE = {
+    "paid_social": ("I'd stop scrolling for a model that builds itself in the feed.", "Another AI ad in my feed. I scroll past those."),
+    "linkedin": ("On LinkedIn I'm in work mode, so I'd actually read it.", "LinkedIn ads are noise. I don't click them."),
+    "search": ("If this showed up when I was searching for a fix, I'd click.", "I'm not searching for this, so I'd never see it."),
+    "video": ("Show me it working in a video and I'll watch the whole thing.", "Pre-roll gets skipped. I'm there for the tutorial."),
+    "email": ("A short, specific email that knows what we make would get a reply.", "Cold email from a vendor goes straight to archive."),
+    "newsletter": ("If 80 Level or the trade press covered it, I'd trust it more.", "I skim newsletters. A sponsored slot won't stick."),
+    "boards": ("If people I trust on the forums swear by it, that's what moves me.", "Vendors posting on our boards get roasted. Don't."),
+    "creators": ("A creator I follow building something real with it would sell me.", "Sponsored creator videos feel like ads with extra steps."),
+    "events": ("Show me at GDC and let me try it on my own asset. That's a meeting.", "I'm not walking a booth for an AI tool."),
+    "podcasts": ("A founder talking honestly on a podcast I already listen to would land.", "I don't remember podcast ads."),
+    "ooh": ("A billboard wouldn't do anything for me on its own.", "A billboard for a 3D tool? Not my world."),
+    "tv": ("A TV spot is a brand thing. It wouldn't change my mind.", "Nobody buys a pipeline tool from a TV ad."),
+}
+
+
+def channels():
+    panel = sample(48, 9)
+    out = {}
+    for vid, v in VARIANT.items():
+        msg = next(x for x in DEMO["campaign"]["variants"] if x["id"] == vid)
+        rows = []
+        for p in panel:
+            pull = message_score(p, v["themes"], STAKE[vid][p["role"]], v["proof"]) - 50  # this message's own pull
+            for i, c in enumerate(CH):
+                a = AFFINITY[p["role"]][i]
+                rec = clamp(10 + 70 * a + pull * (0.25 + 0.5 * a) + rng.gauss(0, 6))
+                rows.append({"persona_id": p["id"], "channel_id": c, "receptivity": rec,
+                             "note": CH_NOTE[c][0] if rec >= 55 else CH_NOTE[c][1]})
+        out[vid] = {"variant_id": vid, "message": msg["message"], "sample_ids": [p["id"] for p in panel], "rows": rows}
+    return out
+
+
 def main():
     panel = sample(100, 3)
     DEMO["sample_ids"] = [p["id"] for p in panel]
@@ -397,6 +459,7 @@ def main():
     DEMO["stress"] = stress(panel)
     DEMO["adoption"] = adoption(sample(50, 5))
     DEMO["competition"] = competition(sample(50, 7))
+    DEMO["channels"] = channels()
     DEMO["generated_by"] = "market/make_demo_results.py (heuristic, not a model)"
     DEMO["note"] = "Demo data. Scored by a transparent heuristic, not a model. Reactions are canned per role. Add a Claude API key to run the market live."
     DEMO_PATH.write_text(json.dumps(DEMO, indent=1))

@@ -6,13 +6,14 @@ import StressView from './components/StressView.jsx';
 import AdoptionView from './components/AdoptionView.jsx';
 import DocumentsView from './components/DocumentsView.jsx';
 import CompetitionView from './components/CompetitionView.jsx';
+import ChannelsView from './components/ChannelsView.jsx';
 import CompetitionDialog from './components/CompetitionDialog.jsx';
 import { MarketView, PersonasView } from './components/MarketView.jsx';
 import { SettingsDialog, CampaignDialog } from './components/Dialogs.jsx';
 import { Icon } from './components/ui.jsx';
 import { analyze } from './lib/analysis.js';
 import { stratifiedSample, setMarketRoles } from './lib/stats.js';
-import { runScore, runStress, runTalk, runExtract, runMessages, runAdoption, runCompetition, runMapCompetitor, resultsToCsv, parseCsv } from './lib/simulate.js';
+import { runScore, runStress, runTalk, runExtract, runMessages, runAdoption, runCompetition, runMapCompetitor, runChannels, resultsToCsv, parseCsv } from './lib/simulate.js';
 import { analyzeCompetition, runCost, competitionToCsv } from './lib/competition.js';
 import { readDocument, pastedDocument } from './lib/docs.js';
 
@@ -31,6 +32,7 @@ const NAV = [
     { id: 'stress', label: 'Stress', hint: 'weakest claim', icon: 'stress' },
     { id: 'adoption', label: 'Adoption', hint: 'features', icon: 'adopt' },
     { id: 'competition', label: 'Competition', hint: 'us vs. them', icon: 'rival' },
+    { id: 'channels', label: 'Channels', hint: 'where to reach', icon: 'channel' },
   ] },
   { group: 'Market', items: [
     { id: 'market', label: 'Segments', icon: 'market' },
@@ -82,6 +84,7 @@ export default function App() {
   const [sampleDocs, setSampleDocs] = useState(false);
   const [brief, setBrief] = useState(null);
   const [adoption, setAdoption] = useState(null);
+  const [channels, setChannels] = useState({});
   const [competition, setCompetition] = useState(EMPTY_COMP);
   const [stressSeed, setStressSeed] = useState(null);
   const [campaign, setCampaign] = useState(null);
@@ -117,6 +120,7 @@ export default function App() {
         }
         setBrief({ ...d.brief, source_count: d.documents?.length });
         setAdoption(d.adoption ?? null);
+        setChannels(d.channels ?? {});
         if (d.competition) setCompetition({ ...d.competition, source: 'demo' });
         if (d.documents?.length) {
           Promise.all(d.documents.map((doc) => fetch(`./${doc.path}`).then((r) => (r.ok ? r.text() : '')).catch(() => '')))
@@ -183,6 +187,7 @@ export default function App() {
       if (old && old.message === v.message && results[v.id]) kept[v.id] = results[v.id];
     }
     setResults(kept);
+    setChannels((ch) => Object.fromEntries(Object.entries(ch).filter(([id, r]) => c.variants.find((v) => v.id === id)?.message === r.message)));
     if (run) simulate(c);
   };
 
@@ -281,6 +286,7 @@ export default function App() {
     if (!variants.length) throw new Error('Claude returned no message directions. Try again.');
     setCampaign((c) => ({ ...c, name: `${b.product_name} launch`, product: b.summary, variants }));
     setResults({});
+    setChannels({});
     setSource('live');
   };
 
@@ -329,6 +335,29 @@ export default function App() {
         settings, market, product: brief.summary, features: brief.features, sample, signal: ctrl.signal,
         onProgress: (done, total) => setProgress((p) => ({ ...p, done, total })),
       }));
+    } catch (e) {
+      if (e.name !== 'AbortError') setError(e.message);
+    } finally {
+      setBusy(false);
+      setProgress(null);
+    }
+  };
+
+  // ---- Channels ----
+  const runChannelTest = async (variant) => {
+    if (!live) return needKey();
+    setError('');
+    setBusy(true);
+    const ctrl = new AbortController();
+    abortRef.current = ctrl;
+    try {
+      const sample = stratifiedSample(market.personas, Math.min(settings.sampleSize, 48), market.roles, 9, market.segments);
+      setProgress({ done: 0, total: 1, label: `Rating ${variant.name} in every channel with ${sample.length} personas` });
+      const res = await runChannels({
+        settings, market, product: campaign?.product, variant, sample, signal: ctrl.signal,
+        onProgress: (done, total) => setProgress((p) => ({ ...p, done, total })),
+      });
+      setChannels((c) => ({ ...c, [variant.id]: res }));
     } catch (e) {
       if (e.name !== 'AbortError') setError(e.message);
     } finally {
@@ -409,6 +438,7 @@ export default function App() {
     score: ['Score', 'Run one message past the market and read it by segment.'],
     talk: ['Talk', 'Interview one persona and let them push back on your pitch.'],
     stress: ['Stress', 'Point your toughest critics at your weakest claim.'],
+    channels: ['Channels', 'Where each persona is most receptive to your message: social, email, message boards, video, events, billboards, TV and more.'],
     market: [market.market_name, market.description],
     personas: ['Personas', 'Every buyer in the synthetic market. Click anyone to talk to them.'],
   };
@@ -547,6 +577,7 @@ export default function App() {
             onRun={() => runComp(competition)} onEdit={() => setDialog('competition')} onGo={setView} onTalk={openTalk}
           />
         )}
+        {view === 'channels' && <ChannelsView market={market} campaign={campaign} channels={channels} live={live} busy={busy} onRun={runChannelTest} onTalk={openTalk} />}
         {view === 'market' && <MarketView market={market} />}
         {view === 'personas' && <PersonasView market={market} onTalk={openTalk} />}
       </main>
