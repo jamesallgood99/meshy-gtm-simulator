@@ -1,0 +1,1944 @@
+{
+  "market_name": "Meshy B2B buyers",
+  "product_category": "AI 3D model generation platform (text, image and sketch to textured, rigged, print-ready 3D models, with plugins, API and a studio workspace)",
+  "description": "A fictional market of 100 buyers for an AI 3D generation platform, split evenly across four segments: amateurs, individual pros and startups, SMB game studios and large studios. Each company carries the buying committee its segment really has: one person for an amateur, one or two for a pro or startup, five for an SMB studio and seven for a large studio. Every persona's pain points are drawn from the Meshy persona doc, the messaging teardown and a review readout of 1,828 Trustpilot and G2 reviews, with intensity that varies by company. All names and companies are invented.",
+  "seed": 7,
+  "n_companies": 100,
+  "pains_per_persona": [
+    3,
+    5
+  ],
+  "themes": {
+    "cost": "Price, cost per asset, outsourcing spend",
+    "speed": "Time to a usable model, deadlines, backlog",
+    "quality": "Accuracy, consistency, topology, textures",
+    "pipeline": "Fit with engines, DCC tools, slicers and APIs",
+    "ip": "Ownership, licensed training data, indemnity, provenance",
+    "privacy": "Who can see the work, training on inputs, data control",
+    "credits": "Credit burn, billing surprises, refunds, checkout",
+    "craft": "Authorship, style, pride in the work",
+    "jobs": "Fear of AI replacing artists, team morale",
+    "compliance": "Security reviews, audits, contracts, AI policies",
+    "support": "Getting help, response time, a named contact",
+    "differentiation": "Standing out, looking bigger, winning clients",
+    "revenue": "Selling more, shipping more, growing the business",
+    "change": "Rollout fatigue, adoption, new tools"
+  },
+  "segments": [
+    {
+      "key": "amateur",
+      "label": "Amateurs",
+      "share": 25,
+      "size_band": "1",
+      "employees": [
+        1,
+        1
+      ],
+      "types": [
+        {
+          "label": "Maker and tabletop",
+          "weight": 10,
+          "roles": [
+            "maker"
+          ],
+          "names": [
+            "Workshop",
+            "Minis",
+            "Makes",
+            "Forge"
+          ],
+          "triggers": [
+            "just bought a new 3D printer",
+            "campaign night is next weekend and the villain needs a mini",
+            "gift season is coming",
+            "free credits ran out mid-project last month",
+            "nothing urgent, just curious"
+          ],
+          "alternatives": [
+            "Free model libraries (MakerWorld, Thingiverse)",
+            "Tripo free tier",
+            "Commissioning an artist",
+            "Meshy free tier"
+          ]
+        },
+        {
+          "label": "Hobby game builder",
+          "weight": 9,
+          "roles": [
+            "hobby_dev"
+          ],
+          "names": [
+            "Games",
+            "Worlds",
+            "Interactive",
+            "Labs"
+          ],
+          "triggers": [
+            "a game jam starts Friday",
+            "a YouTube tutorial name-dropped an AI 3D tool",
+            "free credits ran out mid-project last month",
+            "nothing urgent, just curious"
+          ],
+          "alternatives": [
+            "Free asset packs",
+            "Tripo free tier",
+            "Learning Blender by hand",
+            "Google Antigravity",
+            "Meshy free tier"
+          ]
+        },
+        {
+          "label": "Student creator",
+          "weight": 6,
+          "roles": [
+            "student"
+          ],
+          "names": [
+            "Portfolio",
+            "Studio",
+            "Creates",
+            "Designs"
+          ],
+          "triggers": [
+            "a class project is due in two weeks",
+            "portfolio reviews are next month",
+            "a YouTube tutorial name-dropped an AI 3D tool",
+            "nothing urgent, just curious"
+          ],
+          "alternatives": [
+            "Learning Blender by hand",
+            "Tripo free tier",
+            "Free asset packs",
+            "Meshy free tier"
+          ]
+        }
+      ],
+      "triggers": [
+        "just bought a new 3D printer",
+        "campaign night is next weekend and the villain needs a mini",
+        "a game jam starts Friday",
+        "a YouTube tutorial name-dropped an AI 3D tool",
+        "gift season is coming",
+        "a class project is due in two weeks",
+        "free credits ran out mid-project last month",
+        "nothing urgent, just curious"
+      ],
+      "alternatives": [
+        "Free model libraries (MakerWorld, Thingiverse)",
+        "Tripo free tier",
+        "Commissioning an artist",
+        "Learning Blender by hand",
+        "Meshy free tier"
+      ]
+    },
+    {
+      "key": "pro",
+      "label": "Individual pros and startups",
+      "share": 25,
+      "size_band": "1-10",
+      "employees": [
+        1,
+        10
+      ],
+      "types": [
+        {
+          "label": "Solo commercial dev",
+          "weight": 6,
+          "roles": [
+            "solo_dev"
+          ],
+          "names": [
+            "Games",
+            "Interactive",
+            "Studio",
+            "Softworks"
+          ],
+          "triggers": [
+            "a Steam demo deadline is six weeks out",
+            "content lock is next month",
+            "a publisher pitch is on the calendar",
+            "nothing urgent, steady work"
+          ],
+          "alternatives": [
+            "Tripo",
+            "Freelance contractors",
+            "Modeling by hand in Blender",
+            "Asset store packs",
+            "Hyper3D Rodin"
+          ]
+        },
+        {
+          "label": "Freelance 3D artist",
+          "weight": 5,
+          "roles": [
+            "freelancer"
+          ],
+          "names": [
+            "3D",
+            "Visuals",
+            "Art",
+            "Design"
+          ],
+          "triggers": [
+            "a client asked for three options by Friday",
+            "a client asked whether the work is AI-assisted",
+            "rates are under pressure from cheaper bids",
+            "nothing urgent, steady work"
+          ],
+          "alternatives": [
+            "Modeling by hand in Blender and ZBrush",
+            "Tripo",
+            "Hyper3D Rodin",
+            "A Meshy reseller (3D AI Studio)"
+          ]
+        },
+        {
+          "label": "Agent builder",
+          "weight": 4,
+          "roles": [
+            "agent_builder"
+          ],
+          "names": [
+            "Labs",
+            "AI",
+            "Systems",
+            "Dev"
+          ],
+          "triggers": [
+            "an agent project needs real meshes, not primitives",
+            "a client app needs 3D generated on demand",
+            "a new MCP listing just went live",
+            "nothing urgent, steady work"
+          ],
+          "alternatives": [
+            "Google Antigravity",
+            "Hunyuan3D, self-hosted",
+            "Tripo API",
+            "Blender over MCP with code-built primitives"
+          ]
+        },
+        {
+          "label": "Product-visual startup",
+          "weight": 5,
+          "roles": [
+            "startup_founder",
+            "agent_builder"
+          ],
+          "names": [
+            "AR",
+            "Commerce",
+            "Shop",
+            "Visuals"
+          ],
+          "triggers": [
+            "a storefront redesign needs 200 product models",
+            "an AR launch is two months out",
+            "a 3D agency quote came in too high",
+            "nothing urgent, steady work"
+          ],
+          "alternatives": [
+            "3D agency",
+            "Photogrammetry service",
+            "Tripo",
+            "A Meshy reseller (3D AI Studio)"
+          ]
+        },
+        {
+          "label": "Print and e-commerce shop",
+          "weight": 5,
+          "roles": [
+            "print_shop"
+          ],
+          "names": [
+            "Prints",
+            "Printworks",
+            "Goods",
+            "Makers Co."
+          ],
+          "triggers": [
+            "Etsy holiday orders are ramping up",
+            "a custom-order backlog is two weeks deep",
+            "a new printer farm is coming online",
+            "nothing urgent, steady work"
+          ],
+          "alternatives": [
+            "Free model libraries (MakerWorld, Printables)",
+            "Freelance designers",
+            "Modeling by hand in Fusion 360",
+            "Tripo"
+          ]
+        }
+      ],
+      "triggers": [
+        "a Steam demo deadline is six weeks out",
+        "a client asked for three options by Friday",
+        "an agent project needs real meshes, not primitives",
+        "a storefront redesign needs 200 product models",
+        "Etsy holiday orders are ramping up",
+        "content lock is next month",
+        "a publisher pitch is on the calendar",
+        "nothing urgent, steady work"
+      ],
+      "alternatives": [
+        "Tripo",
+        "Hyper3D Rodin",
+        "Hunyuan3D, self-hosted",
+        "Freelance contractors",
+        "Modeling by hand in Blender",
+        "Google Antigravity",
+        "A Meshy reseller (3D AI Studio)"
+      ]
+    },
+    {
+      "key": "smb_studio",
+      "label": "SMB game studios",
+      "share": 25,
+      "size_band": "10-200",
+      "employees": [
+        10,
+        200
+      ],
+      "types": [
+        {
+          "label": "Indie studio",
+          "weight": 10,
+          "roles": [
+            "studio_head",
+            "art_director",
+            "env_artist",
+            "tech_artist",
+            "producer"
+          ],
+          "names": [
+            "Games",
+            "Studios",
+            "Interactive",
+            "Entertainment"
+          ],
+          "employees": [
+            10,
+            50
+          ]
+        },
+        {
+          "label": "Mid-size studio",
+          "weight": 9,
+          "roles": [
+            "studio_head",
+            "art_director",
+            "env_artist",
+            "tech_artist",
+            "producer"
+          ],
+          "names": [
+            "Studios",
+            "Entertainment",
+            "Games",
+            "Interactive"
+          ],
+          "employees": [
+            50,
+            200
+          ]
+        },
+        {
+          "label": "Mobile and live-service studio",
+          "weight": 6,
+          "roles": [
+            "studio_head",
+            "art_director",
+            "env_artist",
+            "tech_artist",
+            "producer"
+          ],
+          "names": [
+            "Mobile",
+            "Play",
+            "Games",
+            "Live"
+          ],
+          "employees": [
+            20,
+            150
+          ]
+        }
+      ],
+      "triggers": [
+        "600 background props are due in nine weeks",
+        "the publisher sent an AI-use questionnaire",
+        "two environment artists left and haven't been replaced",
+        "outsourcing quotes came in 40% over budget",
+        "a playtest milestone is a month out",
+        "an artist on a personal Meshy plan showed the team a prop",
+        "a live-service content update ships every six weeks",
+        "nothing urgent, between milestones"
+      ],
+      "alternatives": [
+        "Outsourcing studio",
+        "In-house modeling",
+        "Tripo Team Program",
+        "Hyper3D Rodin",
+        "Hunyuan3D, self-hosted",
+        "Doing nothing for now"
+      ]
+    },
+    {
+      "key": "large_studio",
+      "label": "Large studios and publishers",
+      "share": 25,
+      "size_band": "200-5,000",
+      "employees": [
+        200,
+        5000
+      ],
+      "types": [
+        {
+          "label": "Large game studio",
+          "weight": 11,
+          "roles": [
+            "vp_art",
+            "cto",
+            "rnd_lead",
+            "legal",
+            "infosec",
+            "procurement",
+            "senior_artist"
+          ],
+          "names": [
+            "Studios",
+            "Entertainment",
+            "Games"
+          ]
+        },
+        {
+          "label": "Publisher",
+          "weight": 7,
+          "roles": [
+            "vp_art",
+            "cto",
+            "rnd_lead",
+            "legal",
+            "infosec",
+            "procurement",
+            "senior_artist"
+          ],
+          "names": [
+            "Publishing",
+            "Interactive",
+            "Entertainment"
+          ]
+        },
+        {
+          "label": "Art outsourcer",
+          "weight": 7,
+          "roles": [
+            "vp_art",
+            "cto",
+            "rnd_lead",
+            "legal",
+            "infosec",
+            "procurement",
+            "senior_artist"
+          ],
+          "names": [
+            "Art Services",
+            "Creative",
+            "External Dev"
+          ],
+          "employees": [
+            200,
+            1500
+          ]
+        }
+      ],
+      "triggers": [
+        "legal is drafting a 40-question AI addendum",
+        "headcount is flat but content volume is up 30%",
+        "a competitor shipped a content update twice as fast",
+        "the publisher contract now has a generative AI clause",
+        "an R&D lead ran Meshy on a side project",
+        "the artist guild posted an anti-AI statement",
+        "GDC is in March and execs want an AI story",
+        "nothing urgent, AI policy says not yet"
+      ],
+      "alternatives": [
+        "In-house or self-hosted model (Hunyuan3D)",
+        "Outsourcing vendors",
+        "Hyper3D Rodin enterprise",
+        "Tripo",
+        "Gen-AI features inside DCC tools",
+        "AI policy says not yet"
+      ]
+    }
+  ],
+  "roles": [
+    {
+      "key": "maker",
+      "label": "Weekend maker",
+      "segment": "amateur",
+      "buying_role": "Buyer and user",
+      "veto": false,
+      "stakes": 0.3,
+      "titles": [
+        "Tabletop miniature maker",
+        "3D printing hobbyist",
+        "Cosplay prop maker"
+      ],
+      "skepticism": 0.45,
+      "change_fatigue": 0.3,
+      "context": "Owns a 3D printer and makes miniatures, figures and gifts. Can't model or use CAD. Pays with a personal card and reads the checkout page closely.",
+      "core_pains": [
+        {
+          "key": "cant_model",
+          "label": "Can't model or use CAD",
+          "description": "Has ideas and sketches but no way to turn them into a printable file without learning CAD.",
+          "tags": [
+            "speed",
+            "craft"
+          ],
+          "weight": 0.85
+        },
+        {
+          "key": "surprise_charge",
+          "label": "Fear of a surprise charge",
+          "description": "Has heard about AI tools that bill annually when the plan looked monthly, and refunds that bounce.",
+          "tags": [
+            "credits"
+          ],
+          "weight": 0.8
+        }
+      ],
+      "optional_pains": [
+        {
+          "key": "print_fails",
+          "label": "Prints that fail",
+          "description": "Models that aren't watertight waste filament and an evening.",
+          "tags": [
+            "quality",
+            "pipeline"
+          ],
+          "weight": 0.7
+        },
+        {
+          "key": "download_wall",
+          "label": "Locked downloads",
+          "description": "Generating a model, then hitting a paywall to download it.",
+          "tags": [
+            "credits"
+          ],
+          "weight": 0.7
+        },
+        {
+          "key": "my_creation",
+          "label": "Wants it to feel like theirs",
+          "description": "Wants the villain at the table to be their idea, not something an AI made.",
+          "tags": [
+            "craft"
+          ],
+          "weight": 0.6
+        },
+        {
+          "key": "credits_burn",
+          "label": "Credits burned on bad results",
+          "description": "Failed or off-prompt generations still cost credits.",
+          "tags": [
+            "credits",
+            "quality"
+          ],
+          "weight": 0.65
+        }
+      ]
+    },
+    {
+      "key": "hobby_dev",
+      "label": "Hobby game builder",
+      "segment": "amateur",
+      "buying_role": "Buyer and user",
+      "veto": false,
+      "stakes": 0.3,
+      "titles": [
+        "Hobby game developer",
+        "Roblox creator",
+        "Weekend Unity developer"
+      ],
+      "skepticism": 0.5,
+      "change_fatigue": 0.3,
+      "context": "Builds games on weekends in Unity, Godot or Roblox Studio. Needs props and a character or two, not a 3D course.",
+      "core_pains": [
+        {
+          "key": "need_assets",
+          "label": "Needs assets, not a 3D course",
+          "description": "Scenes sit empty because modeling takes too long to learn.",
+          "tags": [
+            "speed"
+          ],
+          "weight": 0.85
+        },
+        {
+          "key": "free_tier_export",
+          "label": "Free tier won't export",
+          "description": "Worries the free plan won't let them export or use what they made.",
+          "tags": [
+            "credits",
+            "ip"
+          ],
+          "weight": 0.7
+        }
+      ],
+      "optional_pains": [
+        {
+          "key": "impostor",
+          "label": "Feels like an impostor",
+          "description": "Next to real developers, worries the game looks amateur.",
+          "tags": [
+            "craft",
+            "differentiation"
+          ],
+          "weight": 0.6
+        },
+        {
+          "key": "engine_import",
+          "label": "Imports break in the engine",
+          "description": "Models that look fine in a preview come in broken or too heavy.",
+          "tags": [
+            "pipeline",
+            "quality"
+          ],
+          "weight": 0.65
+        },
+        {
+          "key": "budget",
+          "label": "Tiny budget",
+          "description": "Twenty dollars a month is a real decision.",
+          "tags": [
+            "cost"
+          ],
+          "weight": 0.7
+        }
+      ]
+    },
+    {
+      "key": "student",
+      "label": "Student creator",
+      "segment": "amateur",
+      "buying_role": "Buyer and user",
+      "veto": false,
+      "stakes": 0.2,
+      "titles": [
+        "College game design student",
+        "Animation student",
+        "Design student"
+      ],
+      "skepticism": 0.4,
+      "change_fatigue": 0.25,
+      "context": "An adult college student building class projects and a first portfolio. Often on a tight budget, sometimes with a school discount.",
+      "core_pains": [
+        {
+          "key": "price",
+          "label": "Price",
+          "description": "Every subscription competes with rent and textbooks.",
+          "tags": [
+            "cost",
+            "credits"
+          ],
+          "weight": 0.85
+        },
+        {
+          "key": "portfolio",
+          "label": "Wants a portfolio that stands out",
+          "description": "Needs work that looks like their own style, not generic AI output.",
+          "tags": [
+            "craft",
+            "differentiation"
+          ],
+          "weight": 0.75
+        }
+      ],
+      "optional_pains": [
+        {
+          "key": "credits_midproject",
+          "label": "Credits run out mid-project",
+          "description": "Monthly credits expire or run out the week a project is due.",
+          "tags": [
+            "credits"
+          ],
+          "weight": 0.7
+        },
+        {
+          "key": "teacher_rules",
+          "label": "Unclear if AI is allowed",
+          "description": "Not sure if instructors accept AI-assisted work.",
+          "tags": [
+            "compliance",
+            "craft"
+          ],
+          "weight": 0.55
+        },
+        {
+          "key": "learning_curve",
+          "label": "Steep learning curve",
+          "description": "Blender tutorials take more hours than the project allows.",
+          "tags": [
+            "speed"
+          ],
+          "weight": 0.6
+        }
+      ]
+    },
+    {
+      "key": "solo_dev",
+      "label": "Solo commercial dev",
+      "segment": "pro",
+      "buying_role": "Economic buyer and user",
+      "veto": false,
+      "stakes": 0.5,
+      "titles": [
+        "Founder and solo developer",
+        "Indie developer",
+        "Technical founder, 3-person studio"
+      ],
+      "skepticism": 0.55,
+      "change_fatigue": 0.35,
+      "context": "Ships games on Steam, mobile or Roblox with one to five people. Buys on a card, compares the cost per asset to a contractor quote, and posts devlogs.",
+      "core_pains": [
+        {
+          "key": "no_artist_budget",
+          "label": "No budget for a 3D artist",
+          "description": "Needs a whole cast of characters and props that one person can't model in time.",
+          "tags": [
+            "cost",
+            "speed"
+          ],
+          "weight": 0.85
+        },
+        {
+          "key": "looks_ai",
+          "label": "Assets that look AI-made",
+          "description": "Fears playtesters and Steam reviewers will clock the art as AI and discount the game.",
+          "tags": [
+            "quality",
+            "craft"
+          ],
+          "weight": 0.75
+        }
+      ],
+      "optional_pains": [
+        {
+          "key": "set_consistency",
+          "label": "Consistency across a set",
+          "description": "Props from different runs don't look like they belong in the same world.",
+          "tags": [
+            "quality"
+          ],
+          "weight": 0.7
+        },
+        {
+          "key": "rigging_odd",
+          "label": "Rigging on odd proportions",
+          "description": "Stylized and chibi characters deform badly when rigged.",
+          "tags": [
+            "quality",
+            "pipeline"
+          ],
+          "weight": 0.6
+        },
+        {
+          "key": "credits_crunch",
+          "label": "Credits run out in crunch",
+          "description": "Monthly credits vanish the week before a demo.",
+          "tags": [
+            "credits"
+          ],
+          "weight": 0.65
+        },
+        {
+          "key": "commercial_rights",
+          "label": "Commercial rights",
+          "description": "Needs clean title to every asset before a store or publisher asks.",
+          "tags": [
+            "ip"
+          ],
+          "weight": 0.65
+        }
+      ]
+    },
+    {
+      "key": "freelancer",
+      "label": "Freelance 3D artist",
+      "segment": "pro",
+      "buying_role": "Economic buyer and user",
+      "veto": false,
+      "stakes": 0.6,
+      "titles": [
+        "Freelance 3D artist",
+        "3D generalist, contract",
+        "Character artist, freelance"
+      ],
+      "skepticism": 0.7,
+      "change_fatigue": 0.4,
+      "context": "Already models for a living in Blender or ZBrush. Clients want more options in less time. Pride in craft makes them wary of AI tools.",
+      "core_pains": [
+        {
+          "key": "more_options",
+          "label": "Clients want more options faster",
+          "description": "Every brief asks for three variations by Friday at the same rate.",
+          "tags": [
+            "speed",
+            "revenue"
+          ],
+          "weight": 0.8
+        },
+        {
+          "key": "devalued",
+          "label": "Fear of being devalued",
+          "description": "Worries AI makes clients think the work should cost less.",
+          "tags": [
+            "jobs",
+            "craft"
+          ],
+          "weight": 0.8
+        }
+      ],
+      "optional_pains": [
+        {
+          "key": "cleanup_cost",
+          "label": "Cleanup eats the time saved",
+          "description": "Dense, uneven topology means retopology before anything is usable.",
+          "tags": [
+            "quality"
+          ],
+          "weight": 0.75
+        },
+        {
+          "key": "signature_style",
+          "label": "Signature style",
+          "description": "Clients hire them for a look; generic output dilutes it.",
+          "tags": [
+            "craft",
+            "differentiation"
+          ],
+          "weight": 0.7
+        },
+        {
+          "key": "client_rights",
+          "label": "Client rights questions",
+          "description": "Clients ask who owns AI-assisted work and whether it trained a model.",
+          "tags": [
+            "ip",
+            "privacy"
+          ],
+          "weight": 0.65
+        }
+      ]
+    },
+    {
+      "key": "agent_builder",
+      "label": "Agent builder",
+      "segment": "pro",
+      "buying_role": "Technical evaluator",
+      "veto": true,
+      "stakes": 0.7,
+      "titles": [
+        "Developer, AI agents",
+        "Tech lead",
+        "Full-stack developer"
+      ],
+      "skepticism": 0.6,
+      "change_fatigue": 0.3,
+      "context": "Wires 3D into AI workflows through APIs and MCP, using Claude Code, Codex or Cursor. Judges docs, rate limits and predictability before anything else.",
+      "core_pains": [
+        {
+          "key": "agent_meshes",
+          "label": "Agent can't make real meshes",
+          "description": "Code-built primitives aren't good enough for the product.",
+          "tags": [
+            "quality",
+            "pipeline"
+          ],
+          "weight": 0.8
+        },
+        {
+          "key": "api_predictability",
+          "label": "Unpredictable API cost",
+          "description": "Bulk generation burns credits with no cost shown before the call.",
+          "tags": [
+            "credits",
+            "cost"
+          ],
+          "weight": 0.75
+        }
+      ],
+      "optional_pains": [
+        {
+          "key": "task_visibility",
+          "label": "API assets missing from the workspace",
+          "description": "Assets made through the API don't show up in the web workspace, so the team tracks them by hand.",
+          "tags": [
+            "pipeline"
+          ],
+          "weight": 0.65
+        },
+        {
+          "key": "build_myself",
+          "label": "Could build it myself",
+          "description": "Tempted to wire an open model instead of paying for a platform.",
+          "tags": [
+            "cost",
+            "differentiation"
+          ],
+          "weight": 0.55
+        },
+        {
+          "key": "rate_limits",
+          "label": "Rate limits",
+          "description": "Needs to know the platform holds up at volume.",
+          "tags": [
+            "pipeline",
+            "support"
+          ],
+          "weight": 0.6
+        }
+      ]
+    },
+    {
+      "key": "startup_founder",
+      "label": "Product-visual founder",
+      "segment": "pro",
+      "buying_role": "Economic buyer",
+      "veto": false,
+      "stakes": 0.6,
+      "titles": [
+        "Founder, e-commerce startup",
+        "Head of product, AR app",
+        "Co-founder"
+      ],
+      "skepticism": 0.55,
+      "change_fatigue": 0.4,
+      "context": "Runs an e-commerce, AR or app team that needs 3D product and brand assets at volume. Wants the product to look premium and the company to look bigger than it is.",
+      "core_pains": [
+        {
+          "key": "web_poly",
+          "label": "Polycount too high for the web",
+          "description": "Models load slowly on product pages and in AR.",
+          "tags": [
+            "quality",
+            "pipeline"
+          ],
+          "weight": 0.75
+        },
+        {
+          "key": "volume_cost",
+          "label": "Cost at volume",
+          "description": "Hundreds of SKUs at agency rates is out of the question.",
+          "tags": [
+            "cost"
+          ],
+          "weight": 0.8
+        }
+      ],
+      "optional_pains": [
+        {
+          "key": "look_bigger",
+          "label": "Wants to look bigger",
+          "description": "Needs visuals that compete with brands ten times their size.",
+          "tags": [
+            "differentiation"
+          ],
+          "weight": 0.65
+        },
+        {
+          "key": "accuracy_products",
+          "label": "Product accuracy",
+          "description": "A 3D model that gets the product wrong creates returns.",
+          "tags": [
+            "quality"
+          ],
+          "weight": 0.7
+        },
+        {
+          "key": "rights_brand",
+          "label": "Rights to brand assets",
+          "description": "Needs to know the brand's assets stay private and owned.",
+          "tags": [
+            "ip",
+            "privacy"
+          ],
+          "weight": 0.55
+        }
+      ]
+    },
+    {
+      "key": "print_shop",
+      "label": "Print shop owner",
+      "segment": "pro",
+      "buying_role": "Economic buyer and user",
+      "veto": false,
+      "stakes": 0.5,
+      "titles": [
+        "Owner, 3D print shop",
+        "Founder, Etsy print business",
+        "Print farm operator"
+      ],
+      "skepticism": 0.55,
+      "change_fatigue": 0.4,
+      "context": "Sells 3D-printed products on Etsy, Shopify or to local clients. Margins depend on how fast a design goes from idea to a print that works.",
+      "core_pains": [
+        {
+          "key": "design_bottleneck",
+          "label": "New designs are the bottleneck",
+          "description": "Printers sit idle while the next product waits for a model.",
+          "tags": [
+            "speed",
+            "revenue"
+          ],
+          "weight": 0.85
+        },
+        {
+          "key": "failed_prints",
+          "label": "Failed prints cost margin",
+          "description": "A model that isn't watertight wastes filament and a print slot.",
+          "tags": [
+            "quality",
+            "cost"
+          ],
+          "weight": 0.75
+        }
+      ],
+      "optional_pains": [
+        {
+          "key": "custom_orders",
+          "label": "Custom orders take too long",
+          "description": "Customers want their pet, logo or character printed, and quoting takes days.",
+          "tags": [
+            "speed",
+            "revenue"
+          ],
+          "weight": 0.7
+        },
+        {
+          "key": "design_ownership",
+          "label": "Owning the designs they sell",
+          "description": "Can't sell a product they don't have clear rights to.",
+          "tags": [
+            "ip"
+          ],
+          "weight": 0.7
+        },
+        {
+          "key": "stand_out_etsy",
+          "label": "Standing out on Etsy",
+          "description": "Hundreds of shops sell the same models from free libraries.",
+          "tags": [
+            "differentiation"
+          ],
+          "weight": 0.65
+        }
+      ]
+    },
+    {
+      "key": "studio_head",
+      "label": "Studio head",
+      "segment": "smb_studio",
+      "buying_role": "Economic buyer",
+      "veto": true,
+      "stakes": 0.8,
+      "titles": [
+        "CEO and co-founder",
+        "Studio head",
+        "Managing director"
+      ],
+      "skepticism": 0.6,
+      "change_fatigue": 0.5,
+      "context": "Owns budget, runway and the publisher relationship. Cares how the studio treats its people and doesn't want to be the studio that replaced its artists.",
+      "core_pains": [
+        {
+          "key": "cost_per_asset",
+          "label": "Cost per asset",
+          "description": "Art is the biggest line in the budget, and outsourcing quotes keep rising.",
+          "tags": [
+            "cost"
+          ],
+          "weight": 0.85
+        },
+        {
+          "key": "publisher_answer",
+          "label": "What to tell the publisher",
+          "description": "Needs a defensible answer when the publisher asks how the studio uses generative AI.",
+          "tags": [
+            "ip",
+            "compliance"
+          ],
+          "weight": 0.8
+        }
+      ],
+      "optional_pains": [
+        {
+          "key": "team_respect",
+          "label": "Keeping the artists' respect",
+          "description": "Fears the team will read any AI tool as a step toward layoffs.",
+          "tags": [
+            "jobs",
+            "change"
+          ],
+          "weight": 0.75
+        },
+        {
+          "key": "runway",
+          "label": "Runway",
+          "description": "Every month of slip costs real money.",
+          "tags": [
+            "cost",
+            "speed"
+          ],
+          "weight": 0.7
+        },
+        {
+          "key": "player_backlash",
+          "label": "Player backlash",
+          "description": "A public 'they used AI art' story could hurt the launch.",
+          "tags": [
+            "craft",
+            "jobs"
+          ],
+          "weight": 0.6
+        }
+      ]
+    },
+    {
+      "key": "art_director",
+      "label": "Art director",
+      "segment": "smb_studio",
+      "buying_role": "Champion and pipeline owner",
+      "veto": false,
+      "stakes": 0.4,
+      "titles": [
+        "Art director",
+        "Lead artist",
+        "Head of art"
+      ],
+      "skepticism": 0.6,
+      "change_fatigue": 0.5,
+      "context": "Owns the asset pipeline and the art bar. Under pressure on props per artist-week, and doesn't want a tool that creates cleanup work or angers the team.",
+      "core_pains": [
+        {
+          "key": "prop_backlog",
+          "label": "Prop backlog",
+          "description": "Hundreds of background props are due before the milestone.",
+          "tags": [
+            "speed"
+          ],
+          "weight": 0.85
+        },
+        {
+          "key": "cleanup_work",
+          "label": "Tools that create cleanup",
+          "description": "Dense topology and inconsistent results mean artists spend the saved time fixing output.",
+          "tags": [
+            "quality"
+          ],
+          "weight": 0.8
+        }
+      ],
+      "optional_pains": [
+        {
+          "key": "art_bar",
+          "label": "Holding the art bar",
+          "description": "Pride in the studio's look turns into fear of a quality drop.",
+          "tags": [
+            "craft",
+            "quality"
+          ],
+          "weight": 0.7
+        },
+        {
+          "key": "seniors_on_grind",
+          "label": "Seniors stuck on grind work",
+          "description": "Senior artists spend weeks on crates instead of hero characters.",
+          "tags": [
+            "craft",
+            "speed"
+          ],
+          "weight": 0.7
+        },
+        {
+          "key": "engine_textures",
+          "label": "Textures break under engine lighting",
+          "description": "Baked shadows and seams show up in Unreal and Unity.",
+          "tags": [
+            "quality",
+            "pipeline"
+          ],
+          "weight": 0.6
+        },
+        {
+          "key": "team_pushback",
+          "label": "Team pushback",
+          "description": "Half the team is against AI and will judge the pilot harshly.",
+          "tags": [
+            "jobs",
+            "change"
+          ],
+          "weight": 0.65
+        }
+      ]
+    },
+    {
+      "key": "env_artist",
+      "label": "Environment artist",
+      "segment": "smb_studio",
+      "buying_role": "End user and quiet veto",
+      "veto": true,
+      "stakes": 1.0,
+      "titles": [
+        "Environment artist",
+        "Prop artist",
+        "3D artist"
+      ],
+      "skepticism": 0.8,
+      "change_fatigue": 0.55,
+      "context": "Their eye and craft are their identity, and their community calls AI theft. They decide whether a pilot survives week one.",
+      "core_pains": [
+        {
+          "key": "job_fear",
+          "label": "AI coming for the job",
+          "description": "Watched layoffs across the industry and reads every AI tool as a threat.",
+          "tags": [
+            "jobs"
+          ],
+          "weight": 0.85
+        },
+        {
+          "key": "authorship",
+          "label": "Authorship",
+          "description": "If a machine made it, is it still their work?",
+          "tags": [
+            "craft"
+          ],
+          "weight": 0.8
+        }
+      ],
+      "optional_pains": [
+        {
+          "key": "trains_on_me",
+          "label": "Their work training a model",
+          "description": "Won't touch a tool that learns from what they make.",
+          "tags": [
+            "privacy",
+            "ip"
+          ],
+          "weight": 0.75
+        },
+        {
+          "key": "grind",
+          "label": "Burnout on grind work",
+          "description": "Weeks of crates and barrels before anything creative.",
+          "tags": [
+            "speed",
+            "craft"
+          ],
+          "weight": 0.65
+        },
+        {
+          "key": "bad_meshes",
+          "label": "500k-triangle meshes",
+          "description": "Has seen AI meshes that take longer to fix than to model.",
+          "tags": [
+            "quality"
+          ],
+          "weight": 0.7
+        }
+      ]
+    },
+    {
+      "key": "tech_artist",
+      "label": "Tech artist",
+      "segment": "smb_studio",
+      "buying_role": "Technical evaluator",
+      "veto": true,
+      "stakes": 0.8,
+      "titles": [
+        "Technical artist",
+        "Pipeline TD",
+        "Senior technical artist"
+      ],
+      "skepticism": 0.7,
+      "change_fatigue": 0.45,
+      "context": "Owns DCC plugins, export, poly budgets and rigging. Distrusts black boxes and wants limits set before generation, not fixed after.",
+      "core_pains": [
+        {
+          "key": "poly_budgets",
+          "label": "Poly budgets and topology",
+          "description": "Needs quad topology and a target poly count, not cleanup after the fact.",
+          "tags": [
+            "quality",
+            "pipeline"
+          ],
+          "weight": 0.85
+        },
+        {
+          "key": "black_box",
+          "label": "Black-box results",
+          "description": "The same prompt gives a clean mesh one run and a broken one the next.",
+          "tags": [
+            "quality"
+          ],
+          "weight": 0.75
+        }
+      ],
+      "optional_pains": [
+        {
+          "key": "pbr_lighting",
+          "label": "Engine-safe PBR",
+          "description": "Baked lighting in textures breaks under the engine's lights.",
+          "tags": [
+            "quality",
+            "pipeline"
+          ],
+          "weight": 0.65
+        },
+        {
+          "key": "plugin_fit",
+          "label": "Plugin and export fit",
+          "description": "Every new tool has to work with the existing Unity or Unreal pipeline.",
+          "tags": [
+            "pipeline"
+          ],
+          "weight": 0.7
+        },
+        {
+          "key": "cost_predictability",
+          "label": "Predictable cost per asset",
+          "description": "Wants the cost of each generation shown before the click.",
+          "tags": [
+            "credits",
+            "cost"
+          ],
+          "weight": 0.55
+        }
+      ]
+    },
+    {
+      "key": "producer",
+      "label": "Producer",
+      "segment": "smb_studio",
+      "buying_role": "Schedule owner",
+      "veto": false,
+      "stakes": 0.5,
+      "titles": [
+        "Producer",
+        "Senior producer",
+        "Development director"
+      ],
+      "skepticism": 0.5,
+      "change_fatigue": 0.5,
+      "context": "Owns milestones and vendor spend. Will back anything that saves the schedule, and kill anything that drags a pilot past a milestone.",
+      "core_pains": [
+        {
+          "key": "milestones",
+          "label": "Milestones slipping",
+          "description": "Background assets are the first thing to slip the schedule.",
+          "tags": [
+            "speed"
+          ],
+          "weight": 0.85
+        },
+        {
+          "key": "vendor_spend",
+          "label": "Vendor spend",
+          "description": "Outsourcing invoices keep coming in over budget.",
+          "tags": [
+            "cost"
+          ],
+          "weight": 0.75
+        }
+      ],
+      "optional_pains": [
+        {
+          "key": "pilot_drag",
+          "label": "Pilots that drag",
+          "description": "Tool pilots with no fixed scope eat weeks.",
+          "tags": [
+            "change",
+            "speed"
+          ],
+          "weight": 0.65
+        },
+        {
+          "key": "vendor_support",
+          "label": "A vendor who shows up",
+          "description": "Needs a named contact and a same-day answer during crunch.",
+          "tags": [
+            "support"
+          ],
+          "weight": 0.6
+        }
+      ]
+    },
+    {
+      "key": "vp_art",
+      "label": "VP of Art",
+      "segment": "large_studio",
+      "buying_role": "Economic buyer",
+      "veto": true,
+      "stakes": 0.8,
+      "titles": [
+        "VP of Art",
+        "Head of Art",
+        "Studio art director"
+      ],
+      "skepticism": 0.7,
+      "change_fatigue": 0.55,
+      "context": "Owns the art budget, headcount plan and a franchise's visual legacy. Believes the quality bar is higher than a playtest.",
+      "core_pains": [
+        {
+          "key": "content_volume",
+          "label": "Content volume up, headcount flat",
+          "description": "Live-service updates need more assets every quarter with the same team.",
+          "tags": [
+            "speed",
+            "cost"
+          ],
+          "weight": 0.85
+        },
+        {
+          "key": "quality_bar",
+          "label": "A quality bar AI can't meet",
+          "description": "Doubts generated assets survive art review on a flagship title.",
+          "tags": [
+            "quality",
+            "craft"
+          ],
+          "weight": 0.8
+        }
+      ],
+      "optional_pains": [
+        {
+          "key": "outsourcing_cost",
+          "label": "Outsourcing cost and lead time",
+          "description": "External art takes months and costs more each year.",
+          "tags": [
+            "cost",
+            "speed"
+          ],
+          "weight": 0.7
+        },
+        {
+          "key": "artist_absorbed",
+          "label": "Artists' work absorbed by a model",
+          "description": "Won't approve anything that trains on the studio's art.",
+          "tags": [
+            "privacy",
+            "jobs"
+          ],
+          "weight": 0.7
+        },
+        {
+          "key": "rival_speed",
+          "label": "Rivals shipping faster",
+          "description": "Watched a competitor double its content cadence.",
+          "tags": [
+            "differentiation",
+            "speed"
+          ],
+          "weight": 0.6
+        }
+      ]
+    },
+    {
+      "key": "cto",
+      "label": "CTO or technical director",
+      "segment": "large_studio",
+      "buying_role": "Technical sponsor",
+      "veto": true,
+      "stakes": 0.9,
+      "titles": [
+        "CTO",
+        "Technical director",
+        "Head of engineering"
+      ],
+      "skepticism": 0.7,
+      "change_fatigue": 0.5,
+      "context": "Owns pipeline, tools and vendor architecture. Weighs building or self-hosting against renting a platform.",
+      "core_pains": [
+        {
+          "key": "build_vs_buy",
+          "label": "Build or self-host instead",
+          "description": "An open model like Hunyuan3D runs on their own servers for free.",
+          "tags": [
+            "cost",
+            "differentiation"
+          ],
+          "weight": 0.8
+        },
+        {
+          "key": "scale_api",
+          "label": "API scale and uptime",
+          "description": "Needs throughput, consistency and SSO at studio scale.",
+          "tags": [
+            "pipeline",
+            "support"
+          ],
+          "weight": 0.75
+        }
+      ],
+      "optional_pains": [
+        {
+          "key": "vendor_lockin",
+          "label": "Vendor lock-in",
+          "description": "Doesn't want the pipeline to depend on one startup.",
+          "tags": [
+            "pipeline",
+            "compliance"
+          ],
+          "weight": 0.6
+        },
+        {
+          "key": "consistency_scale",
+          "label": "Inconsistent output at scale",
+          "description": "Results vary too much to automate.",
+          "tags": [
+            "quality"
+          ],
+          "weight": 0.65
+        },
+        {
+          "key": "retention_controls",
+          "label": "Retention controls",
+          "description": "Needs control over where data lives and how long.",
+          "tags": [
+            "privacy",
+            "compliance"
+          ],
+          "weight": 0.6
+        }
+      ]
+    },
+    {
+      "key": "rnd_lead",
+      "label": "R&D lead",
+      "segment": "large_studio",
+      "buying_role": "Champion",
+      "veto": false,
+      "stakes": 0.4,
+      "titles": [
+        "Technical art director",
+        "R&D lead",
+        "Innovation lead"
+      ],
+      "skepticism": 0.5,
+      "change_fatigue": 0.35,
+      "context": "Runs tool evaluations and has often tried Meshy on a side project. Needs a documented pilot win to take upward.",
+      "core_pains": [
+        {
+          "key": "repeatable",
+          "label": "Repeatable results",
+          "description": "Can't champion a tool that gives different results on the same input.",
+          "tags": [
+            "quality"
+          ],
+          "weight": 0.8
+        },
+        {
+          "key": "pilot_win",
+          "label": "A pilot win to show upward",
+          "description": "Needs numbers leadership will believe.",
+          "tags": [
+            "revenue",
+            "speed"
+          ],
+          "weight": 0.75
+        }
+      ],
+      "optional_pains": [
+        {
+          "key": "named_contact",
+          "label": "A named vendor contact",
+          "description": "Pilots stall when nobody answers technical questions.",
+          "tags": [
+            "support"
+          ],
+          "weight": 0.6
+        },
+        {
+          "key": "rival_envy",
+          "label": "Rivals already using AI",
+          "description": "Hears competitors use AI tools and doesn't want to fall behind.",
+          "tags": [
+            "differentiation"
+          ],
+          "weight": 0.6
+        },
+        {
+          "key": "politics",
+          "label": "Internal politics",
+          "description": "Every AI pilot becomes a debate about jobs.",
+          "tags": [
+            "jobs",
+            "change"
+          ],
+          "weight": 0.55
+        }
+      ]
+    },
+    {
+      "key": "legal",
+      "label": "Legal and IP counsel",
+      "segment": "large_studio",
+      "buying_role": "Veto",
+      "veto": true,
+      "stakes": 1.0,
+      "titles": [
+        "IP counsel",
+        "Senior legal counsel",
+        "Head of legal"
+      ],
+      "skepticism": 0.85,
+      "change_fatigue": 0.6,
+      "context": "Owns contracts, indemnity and the AI policy. Proud of never being wrong, and will hold a deal for months over unclear provenance.",
+      "core_pains": [
+        {
+          "key": "provenance",
+          "label": "Training-data provenance",
+          "description": "Needs proof the model was trained on licensed data, in writing.",
+          "tags": [
+            "ip"
+          ],
+          "weight": 0.9
+        },
+        {
+          "key": "indemnity",
+          "label": "Indemnity",
+          "description": "Wants the vendor to stand behind the output if a claim lands.",
+          "tags": [
+            "ip",
+            "compliance"
+          ],
+          "weight": 0.8
+        }
+      ],
+      "optional_pains": [
+        {
+          "key": "publisher_breach",
+          "label": "Publisher contract breach",
+          "description": "A generative AI clause in the publisher contract creates exposure.",
+          "tags": [
+            "compliance",
+            "ip"
+          ],
+          "weight": 0.7
+        },
+        {
+          "key": "inputs_trained",
+          "label": "Studio inputs used for training",
+          "description": "Concept art and references must never train a vendor's model.",
+          "tags": [
+            "privacy",
+            "ip"
+          ],
+          "weight": 0.75
+        },
+        {
+          "key": "ai_addendum",
+          "label": "The AI addendum",
+          "description": "A 40-question addendum that most vendors can't answer cleanly.",
+          "tags": [
+            "compliance"
+          ],
+          "weight": 0.6
+        }
+      ]
+    },
+    {
+      "key": "infosec",
+      "label": "InfoSec",
+      "segment": "large_studio",
+      "buying_role": "Veto",
+      "veto": true,
+      "stakes": 0.9,
+      "titles": [
+        "CISO",
+        "Security lead",
+        "Vendor risk manager"
+      ],
+      "skepticism": 0.8,
+      "change_fatigue": 0.55,
+      "context": "Owns vendor risk. Unreleased game assets leaving the building is a nightmare scenario.",
+      "core_pains": [
+        {
+          "key": "data_leaving",
+          "label": "Unreleased assets leaving the building",
+          "description": "A leak of unannounced content would be front-page news.",
+          "tags": [
+            "privacy",
+            "compliance"
+          ],
+          "weight": 0.85
+        },
+        {
+          "key": "audit_reports",
+          "label": "Audit reports",
+          "description": "Needs SOC 2 and ISO 27001 reports before anything else.",
+          "tags": [
+            "compliance"
+          ],
+          "weight": 0.8
+        }
+      ],
+      "optional_pains": [
+        {
+          "key": "sso",
+          "label": "SSO and access control",
+          "description": "Every tool must sit behind the studio's identity provider.",
+          "tags": [
+            "compliance",
+            "pipeline"
+          ],
+          "weight": 0.65
+        },
+        {
+          "key": "data_location",
+          "label": "Data location and retention",
+          "description": "Needs to know where data lives and set how long it's kept.",
+          "tags": [
+            "privacy",
+            "compliance"
+          ],
+          "weight": 0.65
+        }
+      ]
+    },
+    {
+      "key": "procurement",
+      "label": "Procurement",
+      "segment": "large_studio",
+      "buying_role": "Paper owner",
+      "veto": true,
+      "stakes": 0.6,
+      "titles": [
+        "Procurement manager",
+        "Vendor manager",
+        "Head of procurement"
+      ],
+      "skepticism": 0.65,
+      "change_fatigue": 0.65,
+      "context": "Owns MSAs, pricing and onboarding. Defaults to no when the paper doesn't fit the template.",
+      "core_pains": [
+        {
+          "key": "nonstandard_terms",
+          "label": "Non-standard terms",
+          "description": "Startup paper that doesn't fit the MSA template stalls for months.",
+          "tags": [
+            "compliance"
+          ],
+          "weight": 0.8
+        },
+        {
+          "key": "volume_pricing",
+          "label": "Volume pricing and invoicing",
+          "description": "Credit-card plans and credit packs don't fit how the studio buys.",
+          "tags": [
+            "cost",
+            "credits"
+          ],
+          "weight": 0.75
+        }
+      ],
+      "optional_pains": [
+        {
+          "key": "vendor_sprawl",
+          "label": "Vendor sprawl",
+          "description": "Every team wants its own AI tool.",
+          "tags": [
+            "cost",
+            "change"
+          ],
+          "weight": 0.6
+        },
+        {
+          "key": "startup_risk",
+          "label": "Startup vendor risk",
+          "description": "Worried the vendor won't be around in three years.",
+          "tags": [
+            "compliance"
+          ],
+          "weight": 0.55
+        }
+      ]
+    },
+    {
+      "key": "senior_artist",
+      "label": "Senior artist",
+      "segment": "large_studio",
+      "buying_role": "Blocker",
+      "veto": true,
+      "stakes": 1.0,
+      "titles": [
+        "Senior environment artist",
+        "Lead character artist",
+        "Principal artist"
+      ],
+      "skepticism": 0.85,
+      "change_fatigue": 0.6,
+      "context": "Speaks for the team's morale and often for guild sentiment. 28% of GDC 2026 respondents were laid off in two years, and it shows.",
+      "core_pains": [
+        {
+          "key": "layoffs",
+          "label": "Layoffs",
+          "description": "Every efficiency tool feels like a headcount plan.",
+          "tags": [
+            "jobs"
+          ],
+          "weight": 0.9
+        },
+        {
+          "key": "credit",
+          "label": "Credit for the work",
+          "description": "Wants artists to keep control and credit, with AI on grind work only.",
+          "tags": [
+            "craft"
+          ],
+          "weight": 0.8
+        }
+      ],
+      "optional_pains": [
+        {
+          "key": "theft",
+          "label": "AI as theft",
+          "description": "Believes most models were trained on artists' work without consent.",
+          "tags": [
+            "ip",
+            "jobs"
+          ],
+          "weight": 0.75
+        },
+        {
+          "key": "guild",
+          "label": "Guild and community pressure",
+          "description": "Peers will judge anyone who endorses an AI tool.",
+          "tags": [
+            "jobs",
+            "craft"
+          ],
+          "weight": 0.6
+        }
+      ]
+    }
+  ],
+  "type_pains": {
+    "Mobile and live-service studio": {
+      "art_director": {
+        "key": "live_cadence",
+        "label": "Live-service content cadence",
+        "description": "A content update every six weeks never lets the backlog clear.",
+        "tags": [
+          "speed"
+        ],
+        "weight": 0.8
+      },
+      "producer": {
+        "key": "live_cadence_prod",
+        "label": "Update cadence",
+        "description": "Every update date is fixed and public.",
+        "tags": [
+          "speed"
+        ],
+        "weight": 0.8
+      }
+    },
+    "Art outsourcer": {
+      "vp_art": {
+        "key": "margin_per_asset",
+        "label": "Margin per asset",
+        "description": "Competes on price and turnaround; AI decides who wins the next bid.",
+        "tags": [
+          "cost",
+          "revenue"
+        ],
+        "weight": 0.85
+      },
+      "legal": {
+        "key": "prove_clean",
+        "label": "Proving clean AI use to clients",
+        "description": "Studio clients demand proof that delivered assets are clean.",
+        "tags": [
+          "ip",
+          "compliance"
+        ],
+        "weight": 0.85
+      }
+    },
+    "Publisher": {
+      "legal": {
+        "key": "portfolio_exposure",
+        "label": "Exposure across the portfolio",
+        "description": "One studio's AI misstep becomes the publisher's problem.",
+        "tags": [
+          "ip",
+          "compliance"
+        ],
+        "weight": 0.8
+      }
+    },
+    "Print and e-commerce shop": {
+      "print_shop": {
+        "key": "etsy_rules",
+        "label": "Marketplace AI rules",
+        "description": "Etsy and other marketplaces ask sellers to disclose AI-assisted designs.",
+        "tags": [
+          "compliance",
+          "ip"
+        ],
+        "weight": 0.6
+      }
+    },
+    "Indie studio": {
+      "studio_head": {
+        "key": "small_team",
+        "label": "Every hire matters",
+        "description": "With 30 people, one artist leaving stalls a whole area of the game.",
+        "tags": [
+          "speed",
+          "jobs"
+        ],
+        "weight": 0.75
+      }
+    }
+  },
+  "competitors": [
+    {
+      "name": "Tripo AI",
+      "positioning": "Fast AI 3D generation with production-ready quad topology, sold on scale (20M+ creators, 200M models).",
+      "messages": {
+        "F1": "Create 3D models in seconds from text and images.",
+        "F4": "Smart Mesh: native quads, 500 to 25K polys, ready for game production, no retopology.",
+        "F6": "A Team Program for studios, with ISO 27001."
+      }
+    },
+    {
+      "name": "Hyper3D Rodin",
+      "positioning": "The world's highest-quality, most controllable AI 3D model generator, for professionals.",
+      "messages": {
+        "F1": "The world's highest-quality, most controllable AI 3D model generator.",
+        "F4": "ControlNets for bounding box, voxel and point cloud, plus DCC plugins.",
+        "F6": "SSO, roles and a shared workspace for teams.",
+        "F7": "Enterprise security and licensed training data."
+      }
+    },
+    {
+      "name": "Tencent Hunyuan3D",
+      "positioning": "Free, open-weights 3D generation from Tencent, used in Tencent's own game studios.",
+      "messages": {
+        "F1": "Free, high-accuracy generation: 3x the modeling accuracy of the previous version.",
+        "F2": "Hunyuan 3D Studio covers UV mapping, rigging and skinning.",
+        "F5": "Tencent Cloud API with custom model training, and open weights you can self-host."
+      }
+    },
+    {
+      "name": "Google Antigravity",
+      "positioning": "An agent-first platform where Gemini agents build playable 3D games and scenes from a prompt.",
+      "messages": {
+        "F5": "Agents write the geometry, script Blender over MCP and make textures, all inside one task."
+      }
+    }
+  ]
+}
