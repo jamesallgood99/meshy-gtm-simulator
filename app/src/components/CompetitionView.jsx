@@ -2,8 +2,10 @@ import React, { useMemo, useState } from 'react';
 import { Avatar, Icon, PainChip, scoreTint, variantVars, pct, r0 } from './ui.jsx';
 import { OURS, pairedQuotes } from '../lib/competition.js';
 import PersonaPicker from './PersonaPicker.jsx';
+import { PLURALS, andList } from '../lib/stats.js';
 
 const plural = (label) => {
+  if (PLURALS[label]) return PLURALS[label];
   const first = label.split(' ')[0];
   const base = first === first.toUpperCase() ? label : label[0].toLowerCase() + label.slice(1);
   return `${base}s`;
@@ -193,9 +195,9 @@ function HeadToHead({ x, analysis, market, rival, setRival, onTalk, picked, setP
       <div className={`reco h2h-reco ${h.verdict}`} style={variantVars(h.verdict === 'loss' ? brand.index : 0)} role="status">
         <span className="reco-icon"><Icon name={h.verdict === 'tie' ? 'compare' : 'star'} /></span>
         <p>
-          {h.verdict === 'win' && <><b>Our message wins with {x.main.map((k) => plural(roleLabel[k])).join(' and ')}</b> by {r0(-h.diffMain.mean)} points (80% range {r0(-h.diffMain.ci[1])}–{r0(-h.diffMain.ci[0])}).</>}
-          {h.verdict === 'loss' && <><b>{brand.name}'s message wins with {x.main.map((k) => plural(roleLabel[k])).join(' and ')}</b> by {r0(h.diffMain.mean)} points (80% range {r0(h.diffMain.ci[0])}–{r0(h.diffMain.ci[1])}). Read their quotes below for what they're doing that we aren't.</>}
-          {h.verdict === 'tie' && <><b>No real difference with {x.main.map((k) => plural(roleLabel[k])).join(' and ')}.</b> The gap is {r0(Math.abs(h.diffMain.mean))} points and the range crosses zero. If this feature matters to the deal, neither message owns it yet.</>}
+          {h.verdict === 'win' && <><b>Our message wins with {andList(x.main.map((k) => plural(roleLabel[k])))}</b> by {r0(-h.diffMain.mean)} points (80% range {r0(-h.diffMain.ci[1])}–{r0(-h.diffMain.ci[0])}).</>}
+          {h.verdict === 'loss' && <><b>{brand.name}'s message wins with {andList(x.main.map((k) => plural(roleLabel[k])))}</b> by {r0(h.diffMain.mean)} points (80% range {r0(h.diffMain.ci[0])}–{r0(h.diffMain.ci[1])}). Read their quotes below for what they're doing that we aren't.</>}
+          {h.verdict === 'tie' && <><b>No real difference with {andList(x.main.map((k) => plural(roleLabel[k])))}.</b> The gap is {r0(Math.abs(h.diffMain.mean))} points and the range crosses zero. If this feature matters to the deal, neither message owns it yet.</>}
         </p>
       </div>
       <section className="section">

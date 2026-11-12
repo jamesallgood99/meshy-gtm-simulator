@@ -93,12 +93,17 @@ export function bySegment(rows, personasById, attr, order) {
 
 // Which roles can block a deal, and how much is at stake for each, come from market.json.
 export const VETO = new Set();
+/** "a", "a and b", "a, b and c" */
+export const andList = (xs) => (xs.length < 3 ? xs.join(' and ') : `${xs.slice(0, -1).join(', ')} and ${xs.at(-1)}`);
+
+export const PLURALS = {}; // role label -> plural for mid-sentence use, from market.json
 const STAKES = {};
 export function setMarketRoles(roles) {
   VETO.clear();
   for (const r of roles) {
     if (r.veto) VETO.add(r.key);
     STAKES[r.key] = r.stakes ?? 0.5;
+    if (r.plural) PLURALS[r.label] = r.plural;
   }
 }
 

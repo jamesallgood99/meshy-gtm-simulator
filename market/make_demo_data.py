@@ -48,14 +48,14 @@ campaign = {
  "name": "Meshy SMB launch",
  "product": brief["summary"],
  "variants": [
-  {"id":"A","name":"Variant A","headline":"Base meshes in minutes, inside your pipeline.",
-   "message":"Base meshes in minutes, inside your pipeline. Send props straight into Blender, Unity or Unreal and finish them your way. Jupiter got usable models 98% faster. Your models stay private and yours.",
+  {"id":"A","name":"Variant A","headline":"Base meshes in minutes, inside your existing pipeline.",
+   "message":"Base meshes in minutes, inside your existing pipeline. Send props straight into Blender, Unity or Unreal and finish them your way. Jupiter got usable models 98% faster. Your models stay private and yours.",
    "focus":"Pipeline: capability and speed","rationale":"Creative brief direction 1. For the art director, tech artist and solo dev. Leads with the hybrid pipeline and the strongest studio proof.","features":["F1","F4"],"claims":["K1","K5"],"checks":["Hybrid pipeline, not one-click","Trust line: private and yours"]},
   {"id":"B","name":"Variant B","headline":"Your models. Your IP. Your call.",
    "message":"Your models. Your IP. Your call. Meshy is trained only on licensed data, keeps your work private by default, and lets you opt out of training on any plan, even free. Base meshes in minutes, finished in your tools.",
    "focus":"Control: trust and ownership","rationale":"Creative brief direction 2. For the studio head, the artist and anyone who has read a one-star review. Trust leads, capability follows.","features":["F6","F7"],"claims":["K4","K5"],"checks":["Trust line: licensed data, opt out","Hybrid pipeline"]},
-  {"id":"C","name":"Variant C","headline":"You give it the signature. Meshy builds the form.",
-   "message":"You give it the signature. Meshy builds the form. Rough out props and characters in minutes, then spend your hours on the details that make the work yours. Get Meshy Certified free, and keep every model you make.",
+  {"id":"C","name":"Variant C","headline":"You give it life. Meshy builds the form.",
+   "message":"You give it life. Meshy builds the form. Rough out props and characters in minutes, then spend your hours on the details that make the work yours. Get Meshy Certified free, and keep every model you make.",
    "focus":"Craft: pride and certification","rationale":"Creative brief direction 3. For artists, freelancers and shop owners. Puts authorship with the artist and offers the certification as the next step.","features":["F1","F8"],"claims":["K5"],"checks":["Never implies replacing artists","Trust line: keep every model"]}
  ]
 }

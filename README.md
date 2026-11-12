@@ -30,7 +30,13 @@ Two documents are preloaded on the Documents page, built from Tasks 1 and 2 of t
 - `app/public/data/samples/meshy-mrd.md`: segments, buying group, competitive landscape, capabilities in scope, pricing, the claims and proof table, what the reviews say, and the three-channel acquisition plan.
 - `app/public/data/samples/meshy-creative-brief.md`: the ask, audience, single-minded proposition, tone, mandatories, and three directions (Pipeline, Control, Craft).
 
-The brief Claude would extract from them, and the three message directions, are already loaded so the dashboard is useful before you add a key. Click **Read documents and write messaging** to have Claude re-read them and write fresh directions.
+The brief Claude would extract from them, and the three message directions, are already loaded. Click **Read documents and write messaging** to have Claude re-read them and write fresh directions.
+
+## Demo data: walk through it without a key
+
+The dashboard opens as if the market had run once, so every page can be explored without an API key: Compare, Score, Talk, Stress, Adoption and Competition all have results. **The demo is not model output.** Scores come from a simple, transparent heuristic in `market/make_demo_results.py` (theme fit with each persona's pains, whether the framing serves their role, proof in the message, skepticism), and reactions are canned lines per role. The dashboard says so on every page. Add a Claude API key to replace it with a live run.
+
+The demo's shape is the hypothesis a live run tests. Variant A (Pipeline) lands best overall and wins art directors, tech artists and CTOs, but it loses the roles that can block a deal: environment and senior artists, legal and InfoSec, all to Variant B (Control). Variant C (Craft) wins freelancers and artists but can't carry legal or procurement.
 
 ## Run it
 
@@ -57,6 +63,7 @@ Everything about the market lives in `market/meshy.config.json`: segments, compa
 ```bash
 python market/generate_market.py     # writes market/output/ and app/public/data/market.json
 python market/make_demo_data.py      # writes the preloaded brief, campaign and competitor messages
+python market/make_demo_results.py   # adds heuristic demo results for every page
 ```
 
 Both scripts use only the Python standard library.

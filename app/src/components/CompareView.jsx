@@ -1,3 +1,4 @@
+import { PLURALS } from '../lib/stats.js';
 import React, { useState } from 'react';
 import Histogram from './Histogram.jsx';
 import SegmentMatrix from './SegmentMatrix.jsx';
@@ -51,6 +52,7 @@ export function DistCard({ pv, isWinner, multi, wide }) {
 }
 
 const roleNoun = (label) => {
+  if (PLURALS[label]) return PLURALS[label];
   const first = label.split(' ')[0];
   const base = first === first.toUpperCase() ? label : label[0].toLowerCase() + label.slice(1);
   return `${base}s`;

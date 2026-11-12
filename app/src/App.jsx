@@ -448,7 +448,7 @@ export default function App() {
           <div className="spectrum-labels"><span>Low pain</span><span>High pain</span></div>
         </div>
         <div className="sidebar-foot">
-          <span className={`mode-pill ${live ? 'live' : 'demo'}`}>{live ? `Live: ${settings.model}` : 'No API key yet'}</span>
+          <span className={`mode-pill ${live ? 'live' : 'demo'}`}>{live ? `Live: ${settings.model}` : 'Demo data'}</span>
           <button className="btn small" onClick={() => setDialog('settings')}><Icon name="settings" />Settings</button>
           <a className="btn small ghost" href={REPO_URL} target="_blank" rel="noreferrer"><Icon name="github" />Source and method</a>
         </div>
@@ -457,19 +457,19 @@ export default function App() {
       <main className="main">
         {!live && source === 'demo' && (
           <div className="banner">
-            <span>The Meshy market, MRD, creative brief and competitors are loaded, and nothing has been scored yet. Add your Claude API key to run the market live.</span>
+            <span>You're looking at demo data: the Meshy market as if it had run once. It was scored by a simple heuristic in market/make_demo_results.py, not a model, so the shape is realistic but the quotes are canned. Add your Claude API key to run the market live.</span>
             <button className="btn small" onClick={() => setDialog('settings')}>Add API key</button>
           </div>
         )}
         {competition.source === 'demo' && live && view === 'competition' && (
           <div className="banner">
-            <span>Competitor messages are loaded but not scored. Run the head-to-head to score them with {settings.model}.</span>
+            <span>Still showing demo data. Run the head-to-head to score these messages with {settings.model}.</span>
             <button className="btn small" onClick={() => runComp(competition)} disabled={busy}>Run live</button>
           </div>
         )}
         {source === 'demo' && live && view === 'compare' && (
           <div className="banner">
-            <span>The three directions from the creative brief are ready. Run the simulation to score them with {settings.model}.</span>
+            <span>Still showing demo data. Run the simulation to score these messages with {settings.model}.</span>
             <button className="btn small" onClick={() => simulate(campaign)} disabled={busy}>Run live</button>
           </div>
         )}

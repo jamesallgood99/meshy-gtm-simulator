@@ -73,6 +73,7 @@
   {
    "key": "maker",
    "label": "Weekend maker",
+   "plural": "weekend makers",
    "buying_role": "Buyer and user",
    "segment": "amateur",
    "veto": false,
@@ -81,6 +82,7 @@
   {
    "key": "hobby_dev",
    "label": "Hobby game builder",
+   "plural": "hobby game builders",
    "buying_role": "Buyer and user",
    "segment": "amateur",
    "veto": false,
@@ -89,6 +91,7 @@
   {
    "key": "student",
    "label": "Student creator",
+   "plural": "student creators",
    "buying_role": "Buyer and user",
    "segment": "amateur",
    "veto": false,
@@ -97,6 +100,7 @@
   {
    "key": "solo_dev",
    "label": "Solo commercial dev",
+   "plural": "solo commercial devs",
    "buying_role": "Economic buyer and user",
    "segment": "pro",
    "veto": false,
@@ -105,6 +109,7 @@
   {
    "key": "freelancer",
    "label": "Freelance 3D artist",
+   "plural": "freelance 3D artists",
    "buying_role": "Economic buyer and user",
    "segment": "pro",
    "veto": false,
@@ -113,6 +118,7 @@
   {
    "key": "agent_builder",
    "label": "Agent builder",
+   "plural": "agent builders",
    "buying_role": "Technical evaluator",
    "segment": "pro",
    "veto": true,
@@ -121,6 +127,7 @@
   {
    "key": "startup_founder",
    "label": "Product-visual founder",
+   "plural": "product-visual founders",
    "buying_role": "Economic buyer",
    "segment": "pro",
    "veto": false,
@@ -129,6 +136,7 @@
   {
    "key": "print_shop",
    "label": "Print shop owner",
+   "plural": "print shop owners",
    "buying_role": "Economic buyer and user",
    "segment": "pro",
    "veto": false,
@@ -137,6 +145,7 @@
   {
    "key": "studio_head",
    "label": "Studio head",
+   "plural": "studio heads",
    "buying_role": "Economic buyer",
    "segment": "smb_studio",
    "veto": true,
@@ -145,6 +154,7 @@
   {
    "key": "art_director",
    "label": "Art director",
+   "plural": "art directors",
    "buying_role": "Champion and pipeline owner",
    "segment": "smb_studio",
    "veto": false,
@@ -153,6 +163,7 @@
   {
    "key": "env_artist",
    "label": "Environment artist",
+   "plural": "environment artists",
    "buying_role": "End user and quiet veto",
    "segment": "smb_studio",
    "veto": true,
@@ -161,6 +172,7 @@
   {
    "key": "tech_artist",
    "label": "Tech artist",
+   "plural": "tech artists",
    "buying_role": "Technical evaluator",
    "segment": "smb_studio",
    "veto": true,
@@ -169,6 +181,7 @@
   {
    "key": "producer",
    "label": "Producer",
+   "plural": "producers",
    "buying_role": "Schedule owner",
    "segment": "smb_studio",
    "veto": false,
@@ -177,6 +190,7 @@
   {
    "key": "vp_art",
    "label": "VP of Art",
+   "plural": "VPs of Art",
    "buying_role": "Economic buyer",
    "segment": "large_studio",
    "veto": true,
@@ -185,6 +199,7 @@
   {
    "key": "cto",
    "label": "CTO or technical director",
+   "plural": "CTOs and technical directors",
    "buying_role": "Technical sponsor",
    "segment": "large_studio",
    "veto": true,
@@ -193,6 +208,7 @@
   {
    "key": "rnd_lead",
    "label": "R&D lead",
+   "plural": "R&D leads",
    "buying_role": "Champion",
    "segment": "large_studio",
    "veto": false,
@@ -201,6 +217,7 @@
   {
    "key": "legal",
    "label": "Legal and IP counsel",
+   "plural": "legal and IP counsel",
    "buying_role": "Veto",
    "segment": "large_studio",
    "veto": true,
@@ -209,6 +226,7 @@
   {
    "key": "infosec",
    "label": "InfoSec",
+   "plural": "InfoSec teams",
    "buying_role": "Veto",
    "segment": "large_studio",
    "veto": true,
@@ -217,6 +235,7 @@
   {
    "key": "procurement",
    "label": "Procurement",
+   "plural": "procurement teams",
    "buying_role": "Paper owner",
    "segment": "large_studio",
    "veto": true,
@@ -225,6 +244,7 @@
   {
    "key": "senior_artist",
    "label": "Senior artist",
+   "plural": "senior artists",
    "buying_role": "Blocker",
    "segment": "large_studio",
    "veto": true,

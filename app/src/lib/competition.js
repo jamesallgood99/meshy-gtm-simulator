@@ -4,7 +4,7 @@
 // so differences are paired: the same CFO read both. That makes a paired bootstrap the right
 // test, and it's much tighter than comparing two independent averages.
 
-import { rng, quantile, mean, VETO } from './stats.js';
+import { rng, quantile, mean, VETO, PLURALS, andList } from './stats.js';
 
 export const OURS = 'ours';
 export const LEAD = 3; // points: smaller gaps are a tie even if the interval clears zero
@@ -123,6 +123,7 @@ export function analyzeCompetition(market, brief, comp) {
 }
 
 const plural = (label) => {
+  if (PLURALS[label]) return PLURALS[label];
   const first = label.split(' ')[0];
   const base = first === first.toUpperCase() ? label : label[0].toLowerCase() + label.slice(1);
   return `${base}s`;
@@ -135,7 +136,7 @@ const fname = (f) => f.short || f.name;
 function findings(features, brands, roleLabel) {
   const out = [];
   const name = (id) => brands.find((b) => b.id === id)?.name;
-  const mainNames = (x) => x.main.map((k) => plural(roleLabel[k] ?? k)).join(' and ');
+  const mainNames = (x) => andList(x.main.map((k) => plural(roleLabel[k] ?? k)));
 
   const losses = [];
   const vetoes = [];

@@ -200,7 +200,7 @@ def build(config):
         "segments": [{"key": s["key"], "label": s["label"], "size_band": s["size_band"],
                       "roles": sorted({k for t in s["types"] for k in t["roles"]}, key=list(roles).index)}
                      for s in segments],
-        "roles": [{k: r.get(k) for k in ("key", "label", "buying_role", "segment", "veto", "stakes")}
+        "roles": [{k: r.get(k) for k in ("key", "label", "plural", "buying_role", "segment", "veto", "stakes")}
                   for r in config["roles"]],
         "competitors": config.get("competitors", []),
         "companies": companies,

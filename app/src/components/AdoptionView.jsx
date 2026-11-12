@@ -1,6 +1,6 @@
 import React, { useMemo, useState } from 'react';
 import { Avatar, PainChip, scoreTint, Icon } from './ui.jsx';
-import { mean, VETO } from '../lib/stats.js';
+import { mean, VETO, PLURALS } from '../lib/stats.js';
 
 function aggregate(rows, personasById, features, roles) {
   const cell = {};
@@ -29,12 +29,7 @@ function findings(agg, features, roles, roleLabel) {
   const cells = [];
   for (const f of features) for (const r of roles) if (agg[f.id][r.key]) cells.push({ f, r, ...agg[f.id][r.key] });
   if (!cells.length) return [];
-  const plural = (k) => {
-    const label = roleLabel[k];
-    if (/(counsel|InfoSec|Procurement)$/.test(label)) return label; // already collective
-    const first = /^(CTO|R&D|VP|IT)\b/.test(label) ? label : label[0].toLowerCase() + label.slice(1);
-    return `${first}s`;
-  };
+  const plural = (k) => PLURALS[roleLabel[k]] ?? `${roleLabel[k]}s`;
   const out = [];
 
   const pull = [...cells].sort((a, b) => b.enth - a.enth)[0];
@@ -277,7 +272,7 @@ export default function AdoptionView({ market, brief, adoption, live, busy, onRu
         {selFeature && (
           <div className="panel voices">
             <div className="section-head">
-              <h2>{roleLabel[selRole]}s on {selFeature.name.toLowerCase()}</h2>
+              <h2>{(PLURALS[roleLabel[selRole]] ?? `${roleLabel[selRole]}s`).replace(/^./, (c) => c.toUpperCase())} on {selFeature.name.toLowerCase()}</h2>
               <p>{selFeature.description}</p>
             </div>
             {groupNotes(cellRows).map(({ r, others }) => {

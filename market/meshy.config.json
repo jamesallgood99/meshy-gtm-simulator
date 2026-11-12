@@ -547,7 +547,8 @@
           ],
           "weight": 0.65
         }
-      ]
+      ],
+      "plural": "weekend makers"
     },
     {
       "key": "hobby_dev",
@@ -615,7 +616,8 @@
           ],
           "weight": 0.7
         }
-      ]
+      ],
+      "plural": "hobby game builders"
     },
     {
       "key": "student",
@@ -683,7 +685,8 @@
           ],
           "weight": 0.6
         }
-      ]
+      ],
+      "plural": "student creators"
     },
     {
       "key": "solo_dev",
@@ -760,7 +763,8 @@
           ],
           "weight": 0.65
         }
-      ]
+      ],
+      "plural": "solo commercial devs"
     },
     {
       "key": "freelancer",
@@ -829,7 +833,8 @@
           ],
           "weight": 0.65
         }
-      ]
+      ],
+      "plural": "freelance 3D artists"
     },
     {
       "key": "agent_builder",
@@ -898,7 +903,8 @@
           ],
           "weight": 0.6
         }
-      ]
+      ],
+      "plural": "agent builders"
     },
     {
       "key": "startup_founder",
@@ -965,7 +971,8 @@
           ],
           "weight": 0.55
         }
-      ]
+      ],
+      "plural": "product-visual founders"
     },
     {
       "key": "print_shop",
@@ -1033,7 +1040,8 @@
           ],
           "weight": 0.65
         }
-      ]
+      ],
+      "plural": "print shop owners"
     },
     {
       "key": "studio_head",
@@ -1102,7 +1110,8 @@
           ],
           "weight": 0.6
         }
-      ]
+      ],
+      "plural": "studio heads"
     },
     {
       "key": "art_director",
@@ -1180,7 +1189,8 @@
           ],
           "weight": 0.65
         }
-      ]
+      ],
+      "plural": "art directors"
     },
     {
       "key": "env_artist",
@@ -1247,7 +1257,8 @@
           ],
           "weight": 0.7
         }
-      ]
+      ],
+      "plural": "environment artists"
     },
     {
       "key": "tech_artist",
@@ -1315,7 +1326,8 @@
           ],
           "weight": 0.55
         }
-      ]
+      ],
+      "plural": "tech artists"
     },
     {
       "key": "producer",
@@ -1372,7 +1384,8 @@
           ],
           "weight": 0.6
         }
-      ]
+      ],
+      "plural": "producers"
     },
     {
       "key": "vp_art",
@@ -1442,7 +1455,8 @@
           ],
           "weight": 0.6
         }
-      ]
+      ],
+      "plural": "VPs of Art"
     },
     {
       "key": "cto",
@@ -1511,7 +1525,8 @@
           ],
           "weight": 0.6
         }
-      ]
+      ],
+      "plural": "CTOs and technical directors"
     },
     {
       "key": "rnd_lead",
@@ -1578,7 +1593,8 @@
           ],
           "weight": 0.55
         }
-      ]
+      ],
+      "plural": "R&D leads"
     },
     {
       "key": "legal",
@@ -1646,7 +1662,8 @@
           ],
           "weight": 0.6
         }
-      ]
+      ],
+      "plural": "legal and IP counsel"
     },
     {
       "key": "infosec",
@@ -1705,7 +1722,8 @@
           ],
           "weight": 0.65
         }
-      ]
+      ],
+      "plural": "InfoSec teams"
     },
     {
       "key": "procurement",
@@ -1763,7 +1781,8 @@
           ],
           "weight": 0.55
         }
-      ]
+      ],
+      "plural": "procurement teams"
     },
     {
       "key": "senior_artist",
@@ -1821,7 +1840,8 @@
           ],
           "weight": 0.6
         }
-      ]
+      ],
+      "plural": "senior artists"
     }
   ],
   "type_pains": {
