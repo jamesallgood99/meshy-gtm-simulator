@@ -9,7 +9,7 @@ cfg = json.loads((R/'market/meshy.config.json').read_text())
 brief = {
  "product_name": "Meshy",
  "summary": "Meshy is an AI 3D generation platform. It turns a sketch, photo or prompt into a textured, rigged, print-ready model in about a minute, sends it into Blender, Unity, Unreal or a slicer, and offers an API, a shared studio workspace and enterprise controls. The SMB push adds a free Meshy Certified program and an AI outreach agent, Myko.",
- "target": "Net-new SMB customers across four equally weighted segments: amateurs, individual pros and startups (including print and e-commerce shops), SMB game studios of 10 to 200 people, and large studios and publishers.",
+ "target": "Net-new B2B customers across three segments: independent pros and startups (indie game developers, freelance 3D artists, AI developers, product-visual startups and print shops), SMB game studios of 10 to 200 people, and large studios, publishers and art outsourcers.",
  "proposition": "Base meshes in minutes, finished in your tools, and every model stays yours.",
  "tone": "Plain, specific and respectful of craft. Talk like a technical artist who has shipped games, not like an AI company. Confident, never hyped. No exclamation marks.",
  "mandatories": [
@@ -20,14 +20,14 @@ brief = {
   "Never disparage Tripo, Rodin or Hunyuan3D by name."
  ],
  "features": [
-  {"id":"F1","name":"Image and text to 3D","short":"Image to 3D","description":"Textured models from a sketch, photo or prompt in about a minute.","primary_roles":["maker","hobby_dev","student","solo_dev","freelancer","startup_founder","print_shop"],"themes":["speed","quality"],"setup_effort":"low","source":"MRD"},
-  {"id":"F2","name":"Rigging and animation","short":"Rigging","description":"Auto-rigging and 600+ animations in the same tool.","primary_roles":["solo_dev","hobby_dev","art_director"],"themes":["speed","pipeline"],"setup_effort":"low","source":"MRD"},
-  {"id":"F3","name":"Print-ready export","short":"Print-ready","description":"Watertight, slicer-ready models sent straight to Bambu Studio or OrcaSlicer.","primary_roles":["maker","print_shop"],"themes":["quality","pipeline"],"setup_effort":"low","source":"MRD"},
-  {"id":"F4","name":"Engine and DCC plugins","short":"Plugins","description":"Send models into Blender, Unity, Unreal, Godot, Maya and Roblox Studio.","primary_roles":["tech_artist","solo_dev","art_director","env_artist"],"themes":["pipeline"],"setup_effort":"medium","source":"MRD"},
-  {"id":"F5","name":"API and MCP for agents","short":"API and MCP","description":"Generate and refine from Claude Code, Codex, Cursor or a custom pipeline.","primary_roles":["agent_builder","cto"],"themes":["pipeline","speed"],"setup_effort":"medium","source":"MRD"},
-  {"id":"F6","name":"Studio workspace","short":"Workspace","description":"Shared seats and credits, private by default, with an admin switch to opt out of model training.","primary_roles":["art_director","studio_head","producer"],"themes":["privacy","cost"],"setup_effort":"low","source":"MRD"},
-  {"id":"F7","name":"Enterprise controls","short":"Enterprise","description":"SAML SSO, SOC 2 and ISO 27001, customer-set retention, and training exclusion by contract.","primary_roles":["legal","infosec","procurement","cto"],"themes":["compliance","ip","privacy"],"setup_effort":"high","source":"MRD"},
-  {"id":"F8","name":"Meshy Certified program","short":"Certification","description":"A free 60 to 90 minute course and practical exam; agencies and print shops with two certified staff become Certified Partners.","primary_roles":["env_artist","freelancer","print_shop","senior_artist"],"themes":["craft","differentiation"],"setup_effort":"low","source":"MRD"}
+  {"id":"F1","name":"Image and text to 3D","short":"Image to 3D","description":"Textured models from a sketch, photo or prompt in about a minute.","primary_roles":["indie_owner","artist","developer"],"themes":["speed","quality"],"setup_effort":"low","source":"MRD"},
+  {"id":"F2","name":"Rigging and animation","short":"Rigging","description":"Auto-rigging and 600+ animations in the same tool.","primary_roles":["indie_owner","art_lead"],"themes":["speed","pipeline"],"setup_effort":"low","source":"MRD"},
+  {"id":"F3","name":"Print-ready export","short":"Print-ready","description":"Watertight, slicer-ready models sent straight to Bambu Studio or OrcaSlicer.","primary_roles":["indie_owner"],"themes":["quality","pipeline"],"setup_effort":"low","source":"MRD"},
+  {"id":"F4","name":"Engine and DCC plugins","short":"Plugins","description":"Send models into Blender, Unity, Unreal, Godot, Maya and Roblox Studio.","primary_roles":["tech_lead","indie_owner","art_lead","artist"],"themes":["pipeline"],"setup_effort":"medium","source":"MRD"},
+  {"id":"F5","name":"API and MCP for agents","short":"API and MCP","description":"Generate and refine from Claude Code, Codex, Cursor or a custom pipeline.","primary_roles":["developer","tech_lead"],"themes":["pipeline","speed"],"setup_effort":"medium","source":"MRD"},
+  {"id":"F6","name":"Studio workspace","short":"Workspace","description":"Shared seats and credits, private by default, with an admin switch to opt out of model training.","primary_roles":["art_lead","studio_lead","producer"],"themes":["privacy","cost"],"setup_effort":"low","source":"MRD"},
+  {"id":"F7","name":"Enterprise controls","short":"Enterprise","description":"SAML SSO, SOC 2 and ISO 27001, customer-set retention, and training exclusion by contract.","primary_roles":["risk_gate","tech_lead"],"themes":["compliance","ip","privacy"],"setup_effort":"high","source":"MRD"},
+  {"id":"F8","name":"Meshy Certified program","short":"Certification","description":"A free 60 to 90 minute course and practical exam; agencies and print shops with two certified staff become Certified Partners.","primary_roles":["artist","indie_owner"],"themes":["craft","differentiation"],"setup_effort":"low","source":"MRD"}
  ],
  "claims": [
   {"id":"K1","text":"Studios get usable models 98% faster.","proof":"Jupiter case study.","proof_strength":3,"theme":"speed","source":"MRD"},

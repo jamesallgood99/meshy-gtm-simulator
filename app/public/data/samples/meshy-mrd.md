@@ -6,22 +6,24 @@
 
 ## Market
 
-Meshy has a strong self-serve base and wants net-new business customers, starting with SMBs. Four segments buy, and they buy differently. We weight them equally in testing because we don't yet know which one converts best at SMB economics.
+Meshy has a strong self-serve base and wants net-new business customers, starting with SMBs. Amateurs and students stay in the self-serve funnel and are out of scope here. Three B2B segments buy, and they buy differently. We weight them equally in testing because we don't yet know which one converts best at SMB economics.
 
-1. **Amateurs.** Makers, hobby game builders and adult student creators. Buy alone on a card.
-2. **Individual pros and startups.** Solo commercial devs, freelance 3D artists, agent builders, product-visual startups and print or e-commerce shops. Buy on a card, read pricing closely.
-3. **SMB game studios (10 to 200 people).** Bottom-up adoption by artists, top-down sign-off by the studio head. The near-term B2B focus.
-4. **Large studios, publishers and art outsourcers (200+).** Buy on risk. Legal and InfoSec can stall a deal for months.
+1. **Individual pros and startups.** Solo commercial devs, freelance 3D artists, agent builders, product-visual startups and print or e-commerce shops. Buy on a card, read pricing closely.
+2. **SMB game studios (10 to 200 people).** Bottom-up adoption by artists, top-down sign-off by the studio head. The near-term B2B focus.
+3. **Large studios, publishers and art outsourcers (200+).** Buy on risk. Legal and InfoSec can stall a deal for months.
 
 ## Buying group
 
-- **Studio head (economic buyer).** Wants lower cost per asset and an AI-use answer for the publisher.
-- **Art director (champion).** Owns the pipeline and the art bar. Fears cleanup work.
-- **Environment or prop artist (quiet veto).** Fears for authorship and the job. Decides whether a pilot survives.
-- **Tech artist (technical evaluator).** Poly budgets, export formats, engine-safe textures.
+Eight personas, bucketed from the roles that show up in deals:
+
+- **Studio leader (economic buyer).** Studio head or VP of Art. Wants lower cost per asset and an AI-use answer for the publisher.
+- **Art director (champion).** Owns the pipeline and the art bar, and usually runs the pilot. Fears cleanup work.
+- **Technical lead (technical evaluator).** Tech artist, pipeline TD or CTO. Poly budgets, export formats, engine-safe textures, build vs. buy.
+- **Production artist (quiet veto).** Environment, prop or senior artist, on staff or freelance. Fears for authorship and the job. Decides whether a pilot survives.
 - **Producer (schedule owner).** Milestones and vendor spend.
-- **Legal, InfoSec, procurement (vetoes at large studios).** Provenance, indemnity, audit reports, standard paper.
-- **Solo buyers.** Price, credits, commercial rights and whether the free tier ends in a usable file.
+- **Legal, security and procurement (gatekeepers at large studios).** Provenance, indemnity, audit reports, standard paper.
+- **Indie business owner.** Solo game developer, product-visual founder or print shop owner. Price, credits, commercial rights and cost per asset against a contractor.
+- **Developer and agent builder.** Wires 3D into products through the API and MCP. Docs, rate limits and predictable cost.
 
 ## Competitive landscape
 
@@ -35,9 +37,9 @@ Meshy's open position: the AI 3D platform studios can defend to their artists an
 
 ## Product capabilities in scope
 
-- **Image and text to 3D.** Textured models from a sketch, photo or prompt in about a minute. Built for amateurs, solo devs and freelancers.
+- **Image and text to 3D.** Textured models from a sketch, photo or prompt in about a minute. Built for indie owners, freelancers and developers.
 - **Rigging and animation.** Auto-rigging and 600+ animations in the same tool. Built for solo devs and art directors.
-- **Print-ready export.** Watertight, slicer-ready models sent straight to Bambu Studio or OrcaSlicer. Built for makers and print shops.
+- **Print-ready export.** Watertight, slicer-ready models sent straight to Bambu Studio or OrcaSlicer. Built for print and e-commerce shops.
 - **Engine and DCC plugins.** Send models into Blender, Unity, Unreal, Godot, Maya and Roblox Studio. Built for tech artists and solo devs.
 - **API and MCP for agents.** Generate and refine from Claude Code, Codex, Cursor or a custom pipeline. Built for agent builders and studio CTOs.
 - **Studio workspace.** Shared seats, shared credits, private by default, with an admin switch to opt out of model training. Built for art directors and studio heads.

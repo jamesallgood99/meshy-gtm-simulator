@@ -95,124 +95,57 @@ VARIANT = {
 }
 # Positive = the framing serves this role. Negative = it reads as a threat or misses their job.
 STAKE = {
-    "A": {"maker": 0.1, "hobby_dev": 0.3, "student": 0.0, "solo_dev": 0.35, "freelancer": -0.25, "agent_builder": 0.2,
-          "startup_founder": 0.2, "print_shop": 0.15, "studio_head": 0.15, "art_director": 0.45, "env_artist": -0.45,
-          "tech_artist": 0.35, "producer": 0.45, "vp_art": 0.2, "cto": 0.15, "rnd_lead": 0.35, "legal": -0.35,
-          "infosec": -0.2, "procurement": 0.0, "senior_artist": -0.55},
-    "B": {"maker": 0.0, "hobby_dev": -0.15, "student": 0.0, "solo_dev": 0.15, "freelancer": 0.25, "agent_builder": -0.1,
-          "startup_founder": 0.1, "print_shop": 0.15, "studio_head": 0.45, "art_director": 0.05, "env_artist": 0.3,
-          "tech_artist": -0.15, "producer": -0.15, "vp_art": 0.25, "cto": 0.15, "rnd_lead": 0.1, "legal": 0.55,
-          "infosec": 0.45, "procurement": 0.15, "senior_artist": 0.15},
-    "C": {"maker": 0.4, "hobby_dev": 0.15, "student": 0.35, "solo_dev": 0.1, "freelancer": 0.45, "agent_builder": -0.35,
-          "startup_founder": -0.1, "print_shop": 0.2, "studio_head": 0.05, "art_director": 0.2, "env_artist": 0.35,
-          "tech_artist": -0.3, "producer": -0.25, "vp_art": 0.1, "cto": -0.35, "rnd_lead": -0.05, "legal": -0.45,
-          "infosec": -0.4, "procurement": -0.35, "senior_artist": 0.25},
+    "A": {"studio_lead": 0.17, "art_lead": 0.4, "tech_lead": 0.25, "artist": -0.42, "producer": 0.45,
+          "risk_gate": -0.18, "indie_owner": 0.23, "developer": 0.2},
+    "B": {"studio_lead": 0.35, "art_lead": 0.08, "tech_lead": 0.0, "artist": 0.23, "producer": -0.15,
+          "risk_gate": 0.38, "indie_owner": 0.13, "developer": -0.1},
+    "C": {"studio_lead": 0.08, "art_lead": 0.08, "tech_lead": -0.32, "artist": 0.35, "producer": -0.25,
+          "risk_gate": -0.4, "indie_owner": 0.07, "developer": -0.35},
 }
 
 # (reaction if it lands, reaction if it doesn't, objection) per role and variant. Canned lines.
 REACT = {
-    "maker": {
-        "A": ("If it really spits out a file I can print tonight, I'm in.", "Pipeline? I just want a mini for Saturday.", "Talks like it's for studios"),
-        "B": ("Good to know what I make is mine. That's more than some free tools promise.", "Nice, but will it charge me for a year when I click monthly?", "Silent on billing"),
-        "C": ("That's it exactly. The villain is my idea. I just can't sculpt it.", "Sounds nice. Does it actually print without failing?", "No proof it prints"),
-    },
-    "hobby_dev": {
-        "A": ("Props straight into Godot is exactly what my empty scenes need.", "My pipeline is me on a Sunday. Is the free tier enough?", "Unclear what's free"),
-        "B": ("Fine, but I mostly care if I can export it.", "Licensing talk doesn't fill my scene.", "Doesn't say what I get"),
-        "C": ("I'd like my game to feel like mine, not an asset flip.", "Nice words. Show me a character in Unity.", "No engine proof"),
-    },
-    "student": {
-        "A": ("Fast is good. My project is due in two weeks.", "Is there a student price? That's my question.", "Price not mentioned"),
-        "B": ("Owning my work matters for my portfolio.", "I'm not a studio. This isn't for me.", "Written for companies"),
-        "C": ("I want my style in 3D. A free certification would help my portfolio.", "Will my instructor accept it?", "Unclear if AI is allowed"),
-    },
-    "solo_dev": {
-        "A": ("98% faster is a real number. A whole cast in my pipeline is the dream.", "Every tool says fast. Will the set look consistent?", "Consistency across a set"),
-        "B": ("Clean commercial rights is the first thing Steam and publishers ask about.", "Rights are good. I still need assets that don't look AI-made.", "Quality not addressed"),
-        "C": ("I like that the vision stays mine.", "Feels aimed at artists. I need throughput.", "No numbers"),
-    },
-    "freelancer": {
-        "A": ("Quick blockouts I finish myself could work.", "Speed is how clients learn to pay me less.", "Devalues the craft"),
-        "B": ("Clients keep asking who owns AI-assisted work. This answers it.", "Ownership is table stakes. What about topology?", "Cleanup cost"),
-        "C": ("Rough it out, I sign it. That's a split I can live with.", "Nice line. The certification might even help with clients.", "Still worried about rates"),
-    },
-    "agent_builder": {
-        "A": ("If the API drops meshes into my pipeline, that's the whole pitch.", "Which pipeline? Show me the API docs and rate limits.", "No API detail"),
-        "B": ("Licensed data helps when my client's legal team asks.", "Not my problem. I need cost per call and uptime.", "No cost or limits"),
-        "C": ("Cute.", "This is for artists. I build systems.", "Wrong audience"),
-    },
-    "startup_founder": {
-        "A": ("Into our existing pipeline at 98% faster would cut our agency bill.", "Our pipeline is a Shopify page. Web-ready file sizes?", "Web polycount"),
-        "B": ("Private by default matters for unreleased products.", "Fine, but cost at volume is the decision.", "No pricing"),
-        "C": ("Not really how I think about product shots.", "We need volume, not artistry.", "Wrong frame"),
-    },
-    "print_shop": {
-        "A": ("Faster from idea to printable file is my whole margin.", "Pipeline means slicer for me. Is it watertight?", "Print success not shown"),
-        "B": ("I can only sell designs I own, so this matters.", "Ownership yes, but failed prints are my real cost.", "No print proof"),
-        "C": ("My customers buy my designs. Keeping my look matters.", "Sounds good, but I need throughput before Christmas.", "No speed proof"),
-    },
-    "studio_head": {
+    "studio_lead": {
         "A": ("Faster inside what we already run, with a case study. Worth a call.", "My artists will read 98% faster as a headcount plan.", "Team reaction"),
         "B": ("Licensed data and opt-out is the answer my publisher wants. I can forward this.", "Good start. Do I get it in writing for the publisher?", "Needs it in the contract"),
-        "C": ("I like that it respects the artists.", "Warm, but what does it do to cost per asset?", "No cost case"),
+        "C": ("AI that serves the art, not the other way round, is the only kind I'd approve.", "Warm, but what does it do to cost per asset?", "No cost case"),
     },
-    "art_director": {
+    "art_lead": {
         "A": ("Straight into Unreal, finished by my team. That clears the prop backlog.", "Every tool says minutes. I've seen the cleanup.", "Cleanup work"),
-        "B": ("Helps with the team's worries, honestly.", "Trust is nice. Can it hit our art bar?", "Quality not shown"),
+        "B": ("Helps with the team's worries, honestly, and gets legal off my back during the pilot.", "Trust is nice. Can it hit our art bar?", "Quality not shown"),
         "C": ("My team would read this better than most AI pitches.", "Lovely line. Show me a matched set of props.", "No set consistency"),
     },
-    "env_artist": {
-        "A": ("If it only does the crates, maybe.", "Faster for whom? Sounds like fewer of us.", "Reads as replacement"),
-        "B": ("Licensed data and nothing trains on my work is the first thing I'd ask.", "Still AI. Who checks the licensed data claim?", "Doesn't trust the claim"),
-        "C": ("If I decide what it touches and the signature stays mine, I'll look.", "Life is the part they'll say is optional next year.", "Distrusts the framing"),
-    },
-    "tech_artist": {
-        "A": ("Straight into our pipeline is my first question. Poly targets?", "Existing pipeline means our budgets and topology. Not mentioned.", "No poly budgets"),
-        "B": ("Fine for legal. Doesn't help me ship.", "Nothing here about topology or export.", "No technical detail"),
+    "tech_lead": {
+        "A": ("Straight into our pipeline is my first question. Poly targets? API?", "Existing pipeline means our budgets and topology. Or we self-host an open model.", "No poly budgets"),
+        "B": ("Contractual no-training and retention control clears a real hurdle.", "Fine for legal. Nothing here about topology or export.", "No technical detail"),
         "C": ("Nice sentiment.", "Marketing copy. Give me poly counts.", "No specs"),
+    },
+    "artist": {
+        "A": ("If it only does the crates, maybe.", "Faster for whom? 98% faster is the line they'll put in the layoff deck.", "Reads as replacement"),
+        "B": ("Licensed data and nothing trains on my work is the first thing I'd ask.", "Every vendor says licensed. Who checks?", "Doesn't trust the claim"),
+        "C": ("If I decide what it touches and the signature stays mine, I'll look.", "Nice words until the budget meeting.", "Distrusts the framing"),
     },
     "producer": {
         "A": ("Hours not days for background props saves my milestone.", "Pilots like this eat weeks. Fixed scope?", "Pilot risk"),
         "B": ("Legal will be happier.", "Doesn't help my schedule.", "No schedule benefit"),
         "C": ("Team morale matters to me too.", "I need dates, not feelings.", "No schedule benefit"),
     },
-    "vp_art": {
-        "A": ("More content with the same team is my year.", "Our bar is higher than a playtest.", "Quality bar"),
-        "B": ("Nothing trained on our art is non-negotiable, so this is a good start.", "I'll need legal's read before I care.", "Needs legal review"),
-        "C": ("AI that serves art direction is the only kind I'd approve.", "Nice words for a franchise this size.", "No scale proof"),
+    "risk_gate": {
+        "A": ("Speed is not my department.", "Nothing about provenance, data flow or terms.", "No IP or security terms"),
+        "B": ("Licensed training data, private by default, no training on inputs. Right claims. Send the contract language and the SOC 2.", "Claims are cheap. Show me the indemnity and the audit report.", "Indemnity and audit"),
+        "C": ("Not a message for legal or security.", "Who owns the output? Where does the data go?", "Ownership unclear"),
     },
-    "cto": {
-        "A": ("Fits the existing pipeline is the right promise. Show me the API.", "Or we self-host an open model for free.", "Build vs. buy"),
-        "B": ("Contractual no-training and retention control clears a big hurdle.", "SSO and retention are table stakes.", "No architecture detail"),
-        "C": ("Not a technical message.", "Nothing here I can evaluate.", "No specs"),
+    "indie_owner": {
+        "A": ("98% faster is a real number. A whole set in my pipeline beats a contractor quote.", "Every tool says fast. Will the set look consistent?", "Consistency across a set"),
+        "B": ("Clean commercial rights is the first thing a store or publisher asks about.", "Rights are good. I still need assets that don't look AI-made.", "Quality not addressed"),
+        "C": ("I like that the vision stays mine.", "Feels aimed at artists. I need throughput.", "No numbers"),
     },
-    "rnd_lead": {
-        "A": ("A pipeline story with a case study is something I can take upward.", "I need repeatable results, not a headline.", "Repeatability"),
-        "B": ("Gets legal off my back during the pilot.", "Helps the pilot, doesn't win it.", "No pilot proof"),
-        "C": ("Might calm the artists during a pilot.", "Leadership won't fund a feeling.", "No numbers"),
-    },
-    "legal": {
-        "A": ("Speed is not my department.", "Nothing about provenance or indemnity.", "No IP terms"),
-        "B": ("Licensed training data and no training on inputs are the right first claims. I'll want them in writing.", "Claims are cheap. Show me the contract language and indemnity.", "Indemnity"),
-        "C": ("Not a legal message.", "Life is a creative claim. Who owns the output?", "Ownership unclear"),
-    },
-    "infosec": {
-        "A": ("Not my concern.", "Where does the data go when it hits the pipeline?", "Data flow unclear"),
-        "B": ("Private by default is the right default. Send the SOC 2.", "I'll need the SOC 2 report under NDA.", "Wants audit report"),
-        "C": ("Not for me.", "Nothing about security.", "No security detail"),
-    },
-    "procurement": {
-        "A": ("If it cuts outsourcing spend, I'll listen.", "What does it cost per seat at volume?", "No pricing"),
-        "B": ("Clear terms help procurement.", "Is this on standard paper?", "Non-standard terms"),
-        "C": ("Not relevant to procurement.", "No commercial terms.", "No terms"),
-    },
-    "senior_artist": {
-        "A": ("Only if it stays on the grind work.", "98% faster is the line they'll put in the layoff deck.", "Reads as layoffs"),
-        "B": ("Licensed data is the minimum. I'd want to see it.", "Every vendor says licensed. Prove it.", "Doesn't trust provenance"),
-        "C": ("At least it says the art is ours.", "Nice words until the budget meeting.", "Distrusts intent"),
+    "developer": {
+        "A": ("If the API drops meshes into my pipeline, that's the whole pitch.", "Which pipeline? Show me the API docs and rate limits.", "No API detail"),
+        "B": ("Licensed data helps when my client's legal team asks.", "Not my problem. I need cost per call and uptime.", "No cost or limits"),
+        "C": ("Cute.", "This is for artists. I build systems.", "Wrong audience"),
     },
 }
-
 
 def compare_rows(personas):
     out = {}
@@ -232,12 +165,11 @@ def compare_rows(personas):
 
 
 # ---------------------------------------------------------------------------------------------
-# Talk: one sample interview with a skeptical environment artist.
+# Talk: one sample interview with a skeptical studio production artist.
 # ---------------------------------------------------------------------------------------------
 def talk(personas):
-    artist = next(p for p in personas if p["role"] == "env_artist" and p["pain_level"] == "High") \
-        if any(p["role"] == "env_artist" and p["pain_level"] == "High" for p in personas) \
-        else next(p for p in personas if p["role"] == "env_artist")
+    studio_artists = [p for p in personas if p["role"] == "artist" and p["segment"] != "pro"]
+    artist = next((p for p in studio_artists if p["pain_level"] == "High"), studio_artists[0])
     return {"persona_id": artist["id"], "transcript": [
         {"role": "user", "text": "Meshy gives your team base meshes in minutes, inside your existing pipeline, so you can spend your time on the work that matters."},
         {"role": "persona", "text": "The work that matters. So the props don't? Half my job is props. When a studio says AI will save time, I hear that they'll need fewer of us. And I'd want to know what your model was trained on."},
@@ -266,24 +198,33 @@ def stress(personas):
         if len(critics) == 5:
             break
     ATTACK = {
-        "env_artist": [
-            (5, "I've seen the 500k-triangle crates. Final means I can't tell it was generated, and we're not there. Call it final and my lead will expect me to ship it as is.", "Before-and-after meshes from a real studio, with the cleanup time measured."),
-            (4, "One-click final is what management hears. Then the prop budget gets cut and I'm the one fixing AI meshes on the weekend.", "A claim scoped to base meshes, with artists finishing the work."),
+        "artist": [
+            (5, "One-click final assets is exactly the sentence that ends up in a layoff deck. I've seen the 500k-triangle crates. Call it final and my lead will expect me to ship it as is.", "Before-and-after meshes from a real studio, with the cleanup time measured."),
+            (4, "Production-ready means it passes art review. Nothing generated has passed ours. Overclaim it and the guild has its next post.", "A claim scoped to base meshes, with artists finishing the work."),
         ],
-        "senior_artist": [
-            (5, "One-click final assets is exactly the sentence that ends up in a layoff deck. If the tool did that, you wouldn't need us. It doesn't, and saying it makes every artist on the team your enemy.", "A claim scoped to base meshes and background props, with artists finishing the work."),
-            (4, "Production-ready on a flagship title means it passes art review. Nothing generated has passed ours. Overclaim it and the guild has its next post.", "A published blind review by senior artists, with the test set and method."),
+        "risk_gate": [
+            (4, "Final assets that ship in a game need clean provenance and an indemnity behind them. If you claim production use, I need the terms that cover production use.", "Indemnity terms for shipped assets and the licensed-data statement in the contract."),
+            (3, "A production claim with no evidence goes straight into our vendor risk file.", "Published evidence for the claim, or drop it."),
         ],
-        "legal": [
-            (3, "Final assets that ship in a game need clean provenance and an indemnity behind them. If you claim production use, I need the terms that cover production use.", "Indemnity terms for shipped assets and the licensed-data statement in the contract."),
+        "tech_lead": [
+            (4, "Production-ready means our poly budget, quad topology and engine-safe textures. You haven't said any of that.", "Poly counts, topology and texture specs on our test set."),
+            (3, "If the same prompt gives a clean mesh one run and a broken one the next, nothing is one-click.", "Repeatability numbers across runs."),
+        ],
+        "studio_lead": [
+            (3, "If I repeat 'one-click final' to my team, I lose them. If I repeat it to my publisher, I own it.", "A claim my artists and my publisher can both live with."),
+            (3, "My art bar is higher than a playtest. Show me it on a flagship asset.", "A studio case study at shipped quality."),
         ],
     }
+    GENERIC = [
+        (3, "Every AI tool says production-ready. I'd need to see it on our work.", "A test on the buyer's own assets."),
+        (2, "One click is never one click.", "A realistic workflow, start to finish."),
+    ]
     used = {}
     attacks = []
     for p in critics:
         i = used.get(p["role"], 0)
         used[p["role"]] = i + 1
-        sev, text, ev = ATTACK[p["role"]][i]
+        sev, text, ev = ATTACK.get(p["role"], GENERIC)[i]
         attacks.append({"persona_id": p["id"], "severity": sev, "attack": text, "evidence_needed": ev})
     attacks.sort(key=lambda a: -a["severity"])
     return {
@@ -321,7 +262,7 @@ def adoption(personas):
             primary = p["role"] in f["primary_roles"]
             fit = theme_fit(p, {t: 1.0 for t in f["themes"]})
             enth = 18 + 45 * fit + (28 if primary else 0) - 10 * p["skepticism"] + rng.gauss(0, 8)
-            if fid == "F8" and p["role"] in ("env_artist", "senior_artist") and any(x["key"] in ("job_fear", "layoffs") and x["intensity"] > 0.7 for x in p["pains"]):
+            if fid == "F8" and p["role"] == "artist" and any(x["key"] == "job_fear" and x["intensity"] > 0.7 for x in p["pains"]):
                 enth -= 12  # the most fearful artists distrust the certification too
             enth = clamp(enth)
             base = enth * (0.75 if primary else 0.35) - 12 * SETUP[f["setup_effort"]] - 8 * p["change_fatigue"]
@@ -396,26 +337,14 @@ def competition(personas):
 # ---------------------------------------------------------------------------------------------
 CH = ["paid_social", "linkedin", "search", "video", "email", "newsletter", "boards", "creators", "events", "podcasts", "ooh", "tv"]
 AFFINITY = {  # social, linkedin, search, video, email, press, boards, creators, events, podcasts, billboards, tv
-    "maker":           [.75, .10, .60, .85, .25, .20, .75, .85, .35, .30, .20, .20],
-    "hobby_dev":       [.70, .10, .60, .85, .20, .25, .80, .85, .40, .30, .15, .20],
-    "student":         [.75, .30, .55, .85, .20, .20, .70, .80, .35, .30, .15, .20],
-    "solo_dev":        [.50, .35, .70, .80, .40, .50, .80, .75, .55, .50, .10, .10],
-    "freelancer":      [.55, .55, .50, .70, .35, .50, .70, .60, .45, .40, .10, .10],
-    "agent_builder":   [.30, .45, .75, .60, .40, .70, .80, .50, .45, .60, .05, .05],
-    "startup_founder": [.55, .75, .70, .50, .55, .55, .40, .40, .50, .55, .15, .10],
-    "print_shop":      [.70, .30, .75, .75, .45, .35, .70, .70, .45, .30, .15, .15],
-    "studio_head":     [.25, .75, .40, .35, .60, .75, .30, .20, .80, .60, .10, .10],
-    "art_director":    [.40, .60, .45, .60, .55, .70, .55, .45, .75, .45, .10, .10],
-    "env_artist":      [.30, .35, .30, .55, .20, .55, .60, .50, .50, .35, .05, .10],
-    "tech_artist":     [.25, .45, .60, .70, .40, .65, .75, .55, .70, .40, .05, .05],
-    "producer":        [.30, .70, .40, .40, .60, .70, .30, .25, .65, .55, .10, .10],
-    "vp_art":          [.20, .70, .30, .45, .50, .70, .30, .30, .85, .50, .10, .10],
-    "cto":             [.15, .60, .55, .45, .55, .70, .55, .25, .70, .55, .05, .05],
-    "rnd_lead":        [.30, .65, .60, .60, .60, .75, .60, .45, .80, .55, .05, .05],
-    "legal":           [.05, .50, .30, .15, .55, .70, .10, .05, .50, .35, .05, .05],
-    "infosec":         [.05, .45, .35, .20, .50, .65, .25, .05, .50, .40, .05, .05],
-    "procurement":     [.05, .55, .30, .10, .65, .45, .05, .05, .40, .20, .05, .05],
-    "senior_artist":   [.30, .35, .20, .50, .15, .50, .55, .45, .55, .35, .05, .10],
+    "studio_lead":  [.23, .72, .35, .40, .55, .72, .30, .25, .82, .55, .10, .10],
+    "art_lead":     [.35, .62, .53, .60, .57, .72, .57, .45, .78, .50, .08, .08],
+    "tech_lead":    [.20, .53, .57, .57, .48, .68, .65, .40, .70, .48, .05, .05],
+    "artist":       [.38, .42, .33, .58, .23, .52, .62, .52, .50, .37, .07, .10],
+    "producer":     [.30, .70, .40, .40, .60, .70, .30, .25, .65, .55, .10, .10],
+    "risk_gate":    [.05, .50, .32, .15, .57, .60, .13, .05, .47, .32, .05, .05],
+    "indie_owner":  [.58, .47, .72, .68, .47, .47, .63, .62, .50, .45, .13, .12],
+    "developer":    [.30, .45, .75, .60, .40, .70, .80, .50, .45, .60, .05, .05],
 }
 # Canned notes per channel: (receptive, not receptive). Not model output.
 CH_NOTE = {

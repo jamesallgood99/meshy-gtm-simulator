@@ -3,8 +3,10 @@
 Generate a synthetic market with segment-specific buying committees.
 
 Each segment gets an equal (or configured) share of the companies. Each company has a type, and the
-type decides who sits on its buying committee: one person for an amateur, five for an SMB studio,
-seven for a large studio. Every persona gets their role's core pains, one pain specific to their
+type decides who sits on its buying committee: one or two people for an independent pro or startup,
+five for a studio. A type can also override a role's titles and context (role_titles, role_context),
+so one bucketed persona reads right in each kind of company. Every persona gets their role's core
+pains, one pain specific to their
 role at that type of company where one exists, and optional role pains up to 3-5 in total. Pain
 intensity varies with how much pressure the company is under, so the same role feels the same
 problem differently from company to company.
@@ -176,7 +178,7 @@ def build(config):
                     "name": full,
                     "role": role["key"],
                     "role_label": role["label"],
-                    "title": rng.choice(role["titles"]),
+                    "title": rng.choice(ctype.get("role_titles", {}).get(role["key"], role["titles"])),
                     "buying_role": role["buying_role"],
                     "veto": role.get("veto", False),
                     "stakes": role.get("stakes", 0.5),
@@ -188,7 +190,7 @@ def build(config):
                     "pain_score": round(pain_score(pains), 2),
                     "trigger": trigger,
                     "current_tool": company["current_tool"],
-                    "context": role.get("context", ""),
+                    "context": ctype.get("role_context", {}).get(role["key"], role.get("context", "")),
                 })
     assign_pain_levels(personas)
     return {
