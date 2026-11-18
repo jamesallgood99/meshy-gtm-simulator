@@ -42,13 +42,22 @@ Two documents are preloaded on the Documents page, built from Tasks 1 and 2 of t
 - `app/public/data/samples/meshy-mrd.md`: segments, buying group, competitive landscape, capabilities in scope, pricing, the claims and proof table, what the reviews say, and the three-channel acquisition plan.
 - `app/public/data/samples/meshy-creative-brief.md`: the ask, audience, single-minded proposition, tone, mandatories, and three directions (Pipeline, Control, Craft).
 
-The brief Claude would extract from them, and the three message directions, are already loaded. Click **Read documents and write messaging** to have Claude re-read them and write fresh directions.
+The brief Claude would extract from them is already loaded, along with four messages to compare:
+
+| Variant | Message | Source |
+|---|---|---|
+| A | The Only 3D AI Trained to Print | **Baseline:** Meshy's homepage today, assembled from its headlines and proof as read on Nov 9, 2026 |
+| B | Base meshes in minutes, inside your existing pipeline | Creative brief direction 1, Pipeline |
+| C | Your models. Your IP. Your call. | Creative brief direction 2, Control |
+| D | You give it life. Meshy builds the form. | Creative brief direction 3, Craft |
+
+The baseline is there to show the difference: how far each brief direction moves each persona from what the site says now. Click **Read documents and write messaging** to have Claude re-read them and write fresh directions.
 
 ## Demo data: walk through it without a key
 
 The dashboard opens as if the market had run once, so every page can be explored without an API key: Compare, Score, Talk, Stress, Adoption, Competition and Channels all have results. **The demo is not model output.** Scores come from a simple, transparent heuristic in `market/make_demo_results.py` (theme fit with each persona's pains, whether the framing serves their role, proof in the message, skepticism), and reactions are canned lines per role. The dashboard says so on every page. Add a Claude API key to replace it with a live run.
 
-The demo's shape is the hypothesis a live run tests. Variant A (Pipeline) lands best overall and wins art directors, technical leads, producers and developers, but it loses two personas that can block a deal: production artists, who prefer Variant C (Craft), and legal/security/procurement, who strongly prefer Variant B (Control). Variant C wins the artists but can't carry the technical lead or legal.
+The demo's shape is the hypothesis a live run tests. Today's homepage (A) scores lowest with studios: it reads as a printing tool with a prototyping line, and it gives legal and security nothing. Only indie owners, mostly print shops, respond to it. Pipeline (B) lands best overall and wins art directors, technical leads, producers and developers, but it loses two personas that can block a deal: production artists, who prefer Craft (D), and legal/security/procurement, who strongly prefer Control (C). Craft wins the artists but can't carry the technical lead or legal.
 
 ## Run it
 
@@ -62,7 +71,7 @@ Open **Settings** and paste a [Claude API key](https://console.anthropic.com). T
 
 | Mode | What it does | Cost |
 |---|---|---|
-| **Compare** | Scores the three directions against 100 personas, by role, segment, pain level and company type | 15 calls |
+| **Compare** | Scores the baseline and the three directions against 100 personas, by role, segment, pain level and company type | 20 calls |
 | **Talk** | Interview any persona live. They push back from their pains, role and current tool | 1 call per message |
 | **Stress** | Your toughest critics attack the weakest claim, and you get a rewrite that survives | 1 call |
 | **Adoption** | How each persona takes to each capability at 90 days and 12 months | about 10 calls at 50 personas |
