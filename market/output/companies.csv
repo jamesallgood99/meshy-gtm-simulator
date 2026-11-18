@@ -1,101 +1,101 @@
 id,name,industry,company_type,size_band,employees,region,trigger,current_tool
-C001,Fischer Games,Amateurs,Hobby game builder,1,1,Korea,a YouTube tutorial name-dropped an AI 3D tool,Tripo free tier
-C002,Osei Designs,Amateurs,Student creator,1,1,Western Europe,a class project is due in two weeks,Meshy free tier
-C003,Kowalski Makes,Amateurs,Maker and tabletop,1,1,Western Europe,just bought a new 3D printer,Commissioning an artist
-C004,Greene Portfolio,Amateurs,Student creator,1,1,Canada,"nothing urgent, just curious",Free asset packs
-C005,Haddad Studio,Amateurs,Student creator,1,1,US Central,"nothing urgent, just curious",Tripo free tier
-C006,Kim Labs,Amateurs,Hobby game builder,1,1,Nordics,a YouTube tutorial name-dropped an AI 3D tool,Google Antigravity
-C007,Johnson Makes,Amateurs,Maker and tabletop,1,1,Western Europe,just bought a new 3D printer,Commissioning an artist
-C008,Yamamoto Creates,Amateurs,Student creator,1,1,Australia,portfolio reviews are next month,Learning Blender by hand
-C009,Greene Makes,Amateurs,Maker and tabletop,1,1,Latin America,campaign night is next weekend and the villain needs a mini,"Free model libraries (MakerWorld, Thingiverse)"
-C010,Torres Workshop,Amateurs,Maker and tabletop,1,1,Japan,gift season is coming,Commissioning an artist
-C011,Nguyen Worlds,Amateurs,Hobby game builder,1,1,Southeast Asia,"nothing urgent, just curious",Google Antigravity
-C012,Hughes Minis,Amateurs,Maker and tabletop,1,1,US West,"nothing urgent, just curious",Commissioning an artist
-C013,Yamamoto Labs,Amateurs,Hobby game builder,1,1,US East,a YouTube tutorial name-dropped an AI 3D tool,Meshy free tier
-C014,Alvarez Minis,Amateurs,Maker and tabletop,1,1,Latin America,"nothing urgent, just curious",Commissioning an artist
-C015,Fischer Labs,Amateurs,Hobby game builder,1,1,Japan,a game jam starts Friday,Tripo free tier
-C016,Fischer Portfolio,Amateurs,Student creator,1,1,US East,a class project is due in two weeks,Free asset packs
-C017,Vance Games,Amateurs,Hobby game builder,1,1,UK,"nothing urgent, just curious",Free asset packs
-C018,Mensah Minis,Amateurs,Maker and tabletop,1,1,UK,just bought a new 3D printer,Commissioning an artist
-C019,Greene Labs,Amateurs,Hobby game builder,1,1,Korea,"nothing urgent, just curious",Learning Blender by hand
-C020,Sorensen Forge,Amateurs,Maker and tabletop,1,1,Korea,just bought a new 3D printer,Commissioning an artist
-C021,Alvarez Workshop,Amateurs,Maker and tabletop,1,1,US East,gift season is coming,Commissioning an artist
-C022,Delgado Studio,Amateurs,Student creator,1,1,US West,portfolio reviews are next month,Meshy free tier
-C023,Ortiz Games,Amateurs,Hobby game builder,1,1,Australia,a game jam starts Friday,Free asset packs
-C024,Morales Minis,Amateurs,Maker and tabletop,1,1,Latin America,just bought a new 3D printer,Meshy free tier
-C025,Brennan Worlds,Amateurs,Hobby game builder,1,1,Australia,free credits ran out mid-project last month,Google Antigravity
-C026,Valestone Softworks,Individual pros and startups,Solo commercial dev,1-10,5,Western Europe,content lock is next month,Asset store packs
-C027,Valebound Commerce,Individual pros and startups,Product-visual startup,1-10,1,Canada,a 3D agency quote came in too high,Tripo
-C028,Saltwick Makers Co.,Individual pros and startups,Print and e-commerce shop,1-10,4,Korea,"nothing urgent, steady work",Tripo
-C029,Driftwick Visuals,Individual pros and startups,Freelance 3D artist,1-10,3,US West,"nothing urgent, steady work",A Meshy reseller (3D AI Studio)
-C030,Glintcrest Visuals,Individual pros and startups,Product-visual startup,1-10,2,US West,an AR launch is two months out,3D agency
-C031,Saltmark 3D,Individual pros and startups,Freelance 3D artist,1-10,4,US West,"nothing urgent, steady work",Hyper3D Rodin
-C032,Hollowfield Dev,Individual pros and startups,Agent builder,1-10,3,Western Europe,a new MCP listing just went live,Blender over MCP with code-built primitives
-C033,Saltcrest Dev,Individual pros and startups,Agent builder,1-10,6,Australia,a client app needs 3D generated on demand,Google Antigravity
-C034,Harborstone Games,Individual pros and startups,Solo commercial dev,1-10,9,US West,a Steam demo deadline is six weeks out,Tripo
-C035,Lantern Softworks,Individual pros and startups,Solo commercial dev,1-10,3,Canada,"nothing urgent, steady work",Asset store packs
-C036,Wrenbound AR,Individual pros and startups,Product-visual startup,1-10,7,US West,a 3D agency quote came in too high,Photogrammetry service
-C037,Mosslight Goods,Individual pros and startups,Print and e-commerce shop,1-10,9,Southeast Asia,a custom-order backlog is two weeks deep,"Free model libraries (MakerWorld, Printables)"
-C038,Saltfall Commerce,Individual pros and startups,Product-visual startup,1-10,3,UK,a storefront redesign needs 200 product models,Photogrammetry service
-C039,Thornbound Prints,Individual pros and startups,Print and e-commerce shop,1-10,5,US East,a custom-order backlog is two weeks deep,Modeling by hand in Fusion 360
-C040,Ironforge Games,Individual pros and startups,Solo commercial dev,1-10,5,Nordics,a publisher pitch is on the calendar,Hyper3D Rodin
-C041,Fableforge Printworks,Individual pros and startups,Print and e-commerce shop,1-10,6,US West,a new printer farm is coming online,Tripo
-C042,Northstone 3D,Individual pros and startups,Freelance 3D artist,1-10,3,US East,"nothing urgent, steady work",A Meshy reseller (3D AI Studio)
-C043,Rook Dev,Individual pros and startups,Agent builder,1-10,2,Korea,a client app needs 3D generated on demand,"Hunyuan3D, self-hosted"
-C044,Prismfall Design,Individual pros and startups,Freelance 3D artist,1-10,4,Nordics,rates are under pressure from cheaper bids,Hyper3D Rodin
-C045,Northgate Prints,Individual pros and startups,Print and e-commerce shop,1-10,8,US West,a custom-order backlog is two weeks deep,Freelance designers
-C046,Saltlight Shop,Individual pros and startups,Product-visual startup,1-10,7,Southeast Asia,an AR launch is two months out,Tripo
-C047,Harborgate Games,Individual pros and startups,Solo commercial dev,1-10,9,UK,"nothing urgent, steady work",Hyper3D Rodin
-C048,Hollowfall AI,Individual pros and startups,Agent builder,1-10,7,UK,a new MCP listing just went live,Blender over MCP with code-built primitives
-C049,Lanternstone Visuals,Individual pros and startups,Freelance 3D artist,1-10,4,US West,a client asked for three options by Friday,Tripo
-C050,Ember Games,Individual pros and startups,Solo commercial dev,1-10,2,Korea,a publisher pitch is on the calendar,Tripo
-C051,Northwick Games,SMB game studios,Mid-size studio,10-200,115,Australia,two environment artists left and haven't been replaced,In-house modeling
-C052,Pixellight Studios,SMB game studios,Indie studio,10-200,29,UK,the publisher sent an AI-use questionnaire,Tripo Team Program
-C053,Wrenbound Studios,SMB game studios,Mid-size studio,10-200,139,Western Europe,the publisher sent an AI-use questionnaire,"Hunyuan3D, self-hosted"
-C054,Prismfall Entertainment,SMB game studios,Mid-size studio,10-200,150,Australia,a playtest milestone is a month out,Outsourcing studio
-C055,Ironbound Entertainment,SMB game studios,Mid-size studio,10-200,74,Japan,600 background props are due in nine weeks,Doing nothing for now
-C056,Rookgate Games,SMB game studios,Indie studio,10-200,17,Latin America,two environment artists left and haven't been replaced,Hyper3D Rodin
-C057,Iron Live,SMB game studios,Mobile and live-service studio,10-200,146,Latin America,600 background props are due in nine weeks,"Hunyuan3D, self-hosted"
-C058,Ironfall Games,SMB game studios,Indie studio,10-200,49,US Central,two environment artists left and haven't been replaced,Hyper3D Rodin
-C059,Emberfield Games,SMB game studios,Mid-size studio,10-200,92,UK,600 background props are due in nine weeks,Hyper3D Rodin
-C060,Thornwick Entertainment,SMB game studios,Indie studio,10-200,32,US East,an artist on a personal Meshy plan showed the team a prop,Hyper3D Rodin
-C061,Rook Studios,SMB game studios,Indie studio,10-200,28,Canada,the publisher sent an AI-use questionnaire,Outsourcing studio
-C062,Driftforge Studios,SMB game studios,Mid-size studio,10-200,92,Nordics,two environment artists left and haven't been replaced,In-house modeling
-C063,Thorngate Games,SMB game studios,Indie studio,10-200,14,US West,600 background props are due in nine weeks,Outsourcing studio
-C064,Hollow Games,SMB game studios,Mid-size studio,10-200,171,Australia,600 background props are due in nine weeks,"Hunyuan3D, self-hosted"
-C065,Rookmark Interactive,SMB game studios,Indie studio,10-200,15,Korea,a playtest milestone is a month out,Outsourcing studio
-C066,Irongate Studios,SMB game studios,Indie studio,10-200,47,US East,a playtest milestone is a month out,Hyper3D Rodin
-C067,Hollowbound Games,SMB game studios,Indie studio,10-200,34,Australia,two environment artists left and haven't been replaced,"Hunyuan3D, self-hosted"
-C068,Glint Games,SMB game studios,Mobile and live-service studio,10-200,64,Australia,the publisher sent an AI-use questionnaire,Outsourcing studio
-C069,Pixelwick Studios,SMB game studios,Indie studio,10-200,45,US West,an artist on a personal Meshy plan showed the team a prop,Tripo Team Program
-C070,Rookforge Play,SMB game studios,Mobile and live-service studio,10-200,86,Japan,a live-service content update ships every six weeks,In-house modeling
-C071,Lanternlight Games,SMB game studios,Mid-size studio,10-200,51,Latin America,a playtest milestone is a month out,"Hunyuan3D, self-hosted"
-C072,Northforge Play,SMB game studios,Mobile and live-service studio,10-200,131,UK,two environment artists left and haven't been replaced,Outsourcing studio
-C073,Saltgate Live,SMB game studios,Mobile and live-service studio,10-200,112,Canada,"nothing urgent, between milestones","Hunyuan3D, self-hosted"
-C074,Valebound Interactive,SMB game studios,Mid-size studio,10-200,133,US Central,an artist on a personal Meshy plan showed the team a prop,"Hunyuan3D, self-hosted"
-C075,Copperfield Play,SMB game studios,Mobile and live-service studio,10-200,59,Western Europe,two environment artists left and haven't been replaced,"Hunyuan3D, self-hosted"
-C076,Harbor Publishing,Large studios and publishers,Publisher,"200-5,000",1433,Western Europe,the artist guild posted an anti-AI statement,Gen-AI features inside DCC tools
-C077,Glintfall Art Services,Large studios and publishers,Art outsourcer,"200-5,000",226,Western Europe,legal is drafting a 40-question AI addendum,Outsourcing vendors
-C078,Thornlight Studios,Large studios and publishers,Large game studio,"200-5,000",272,Canada,GDC is in March and execs want an AI story,Gen-AI features inside DCC tools
-C079,Hollowfield Creative,Large studios and publishers,Art outsourcer,"200-5,000",1032,Western Europe,the artist guild posted an anti-AI statement,Tripo
-C080,Lanternstone Games,Large studios and publishers,Large game studio,"200-5,000",2311,US West,the artist guild posted an anti-AI statement,AI policy says not yet
-C081,Lanternstone Art Services,Large studios and publishers,Art outsourcer,"200-5,000",1258,Latin America,the artist guild posted an anti-AI statement,Gen-AI features inside DCC tools
-C082,Copperfield Interactive,Large studios and publishers,Publisher,"200-5,000",440,Japan,headcount is flat but content volume is up 30%,Outsourcing vendors
-C083,Moss Art Services,Large studios and publishers,Art outsourcer,"200-5,000",638,Southeast Asia,legal is drafting a 40-question AI addendum,AI policy says not yet
-C084,Lanternmark Studios,Large studios and publishers,Large game studio,"200-5,000",221,US East,the publisher contract now has a generative AI clause,Tripo
-C085,Quarrymark Games,Large studios and publishers,Large game studio,"200-5,000",4988,UK,GDC is in March and execs want an AI story,AI policy says not yet
-C086,Quarrybound Games,Large studios and publishers,Large game studio,"200-5,000",996,Latin America,legal is drafting a 40-question AI addendum,In-house or self-hosted model (Hunyuan3D)
-C087,Quarry External Dev,Large studios and publishers,Art outsourcer,"200-5,000",489,UK,legal is drafting a 40-question AI addendum,Tripo
-C088,Fablestone Interactive,Large studios and publishers,Publisher,"200-5,000",2296,US Central,the artist guild posted an anti-AI statement,Outsourcing vendors
-C089,Wrengate Publishing,Large studios and publishers,Publisher,"200-5,000",3175,Latin America,legal is drafting a 40-question AI addendum,In-house or self-hosted model (Hunyuan3D)
-C090,Copperfield Publishing,Large studios and publishers,Publisher,"200-5,000",2240,Korea,the artist guild posted an anti-AI statement,In-house or self-hosted model (Hunyuan3D)
-C091,Ironwick Publishing,Large studios and publishers,Publisher,"200-5,000",1271,UK,legal is drafting a 40-question AI addendum,Outsourcing vendors
-C092,Lanternbound Games,Large studios and publishers,Large game studio,"200-5,000",4532,US West,a competitor shipped a content update twice as fast,Gen-AI features inside DCC tools
-C093,Valelight Entertainment,Large studios and publishers,Large game studio,"200-5,000",4843,US Central,the artist guild posted an anti-AI statement,Outsourcing vendors
-C094,Rookfield Entertainment,Large studios and publishers,Large game studio,"200-5,000",3583,Australia,GDC is in March and execs want an AI story,Hyper3D Rodin enterprise
-C095,Valefall Games,Large studios and publishers,Large game studio,"200-5,000",1260,Latin America,"nothing urgent, AI policy says not yet",AI policy says not yet
-C096,Glintfield Entertainment,Large studios and publishers,Large game studio,"200-5,000",3871,US East,a competitor shipped a content update twice as fast,Outsourcing vendors
-C097,Coppercrest Creative,Large studios and publishers,Art outsourcer,"200-5,000",1472,Latin America,an R&D lead ran Meshy on a side project,Outsourcing vendors
-C098,Embergate Entertainment,Large studios and publishers,Publisher,"200-5,000",1195,Latin America,a competitor shipped a content update twice as fast,Outsourcing vendors
-C099,Fablebound Studios,Large studios and publishers,Large game studio,"200-5,000",3583,Japan,"nothing urgent, AI policy says not yet",Gen-AI features inside DCC tools
-C100,Mosscrest Art Services,Large studios and publishers,Art outsourcer,"200-5,000",1019,US East,headcount is flat but content volume is up 30%,Outsourcing vendors
+C001,Oakbound Commerce,Individual pros and startups,Product-visual startup,1-10,6,US East,"nothing urgent, steady work",Photogrammetry service
+C002,Prismfield Studio,Individual pros and startups,Indie game developer,1-10,7,Latin America,a Steam demo deadline is six weeks out,Modeling by hand in Blender
+C003,Valestone AI,Individual pros and startups,AI and agent developer,1-10,1,Nordics,"nothing urgent, steady work",Blender over MCP with code-built primitives
+C004,Emberstone Makers Co.,Individual pros and startups,Print and e-commerce shop,1-10,3,Korea,"nothing urgent, steady work",Modeling by hand in Fusion 360
+C005,Hollowlight Games,Individual pros and startups,Indie game developer,1-10,4,Southeast Asia,"nothing urgent, steady work",Freelance contractors
+C006,Quarrygate Prints,Individual pros and startups,Print and e-commerce shop,1-10,5,Canada,"nothing urgent, steady work",Modeling by hand in Fusion 360
+C007,Rookfall Design,Individual pros and startups,Freelance 3D artist,1-10,6,Latin America,a client asked whether the work is AI-assisted,Tripo
+C008,Lanternbound Studio,Individual pros and startups,Indie game developer,1-10,8,Australia,a publisher pitch is on the calendar,Tripo
+C009,Pixelmark Design,Individual pros and startups,Freelance 3D artist,1-10,8,Australia,a client asked for three options by Friday,Hyper3D Rodin
+C010,Pixel Art,Individual pros and startups,Freelance 3D artist,1-10,5,Japan,a client asked whether the work is AI-assisted,A Meshy reseller (3D AI Studio)
+C011,Hollowfall Printworks,Individual pros and startups,Print and e-commerce shop,1-10,8,UK,Etsy holiday orders are ramping up,"Free model libraries (MakerWorld, Printables)"
+C012,Rookcrest Commerce,Individual pros and startups,Product-visual startup,1-10,9,Nordics,"nothing urgent, steady work",3D agency
+C013,Drift Goods,Individual pros and startups,Print and e-commerce shop,1-10,3,Korea,a custom-order backlog is two weeks deep,Tripo
+C014,Northmark Design,Individual pros and startups,Freelance 3D artist,1-10,2,Latin America,a client asked for three options by Friday,Hyper3D Rodin
+C015,Saltlight Commerce,Individual pros and startups,Product-visual startup,1-10,5,UK,a storefront redesign needs 200 product models,3D agency
+C016,Pixelforge Shop,Individual pros and startups,Product-visual startup,1-10,4,US West,"nothing urgent, steady work",Photogrammetry service
+C017,Lanternwick AI,Individual pros and startups,AI and agent developer,1-10,4,Canada,a new MCP listing just went live,Google Antigravity
+C018,Pixel Softworks,Individual pros and startups,Indie game developer,1-10,7,Latin America,content lock is next month,Hyper3D Rodin
+C019,Irongate Labs,Individual pros and startups,AI and agent developer,1-10,1,Australia,"nothing urgent, steady work",Google Antigravity
+C020,Valemark Printworks,Individual pros and startups,Print and e-commerce shop,1-10,3,US West,a new printer farm is coming online,Tripo
+C021,Harborlight Dev,Individual pros and startups,AI and agent developer,1-10,1,UK,"nothing urgent, steady work",Blender over MCP with code-built primitives
+C022,Fablefield 3D,Individual pros and startups,Freelance 3D artist,1-10,4,Western Europe,a client asked for three options by Friday,Modeling by hand in Blender and ZBrush
+C023,Rookfield Softworks,Individual pros and startups,Indie game developer,1-10,5,US West,a publisher pitch is on the calendar,Asset store packs
+C024,Saltwick Dev,Individual pros and startups,AI and agent developer,1-10,3,Korea,a client app needs 3D generated on demand,Blender over MCP with code-built primitives
+C025,Thornmark Interactive,Individual pros and startups,Indie game developer,1-10,3,US West,"nothing urgent, steady work",Asset store packs
+C026,Emberstone Games,Individual pros and startups,Indie game developer,1-10,8,Nordics,content lock is next month,Asset store packs
+C027,Pixelfall AR,Individual pros and startups,Product-visual startup,1-10,1,Australia,an AR launch is two months out,Tripo
+C028,Saltcrest 3D,Individual pros and startups,Freelance 3D artist,1-10,9,Latin America,a client asked for three options by Friday,Hyper3D Rodin
+C029,Hollowmark Interactive,Individual pros and startups,Indie game developer,1-10,9,Nordics,a publisher pitch is on the calendar,Tripo
+C030,Fablefield Art,Individual pros and startups,Freelance 3D artist,1-10,1,Japan,rates are under pressure from cheaper bids,Tripo
+C031,Glintcrest Studios,SMB game studios,Indie studio,10-200,41,Japan,a playtest milestone is a month out,In-house modeling
+C032,Quarrycrest Games,SMB game studios,Mid-size studio,10-200,105,Australia,600 background props are due in nine weeks,Outsourcing studio
+C033,Rookwick Studios,SMB game studios,Indie studio,10-200,29,US West,a live-service content update ships every six weeks,Hyper3D Rodin
+C034,Rookstone Interactive,SMB game studios,Mid-size studio,10-200,172,UK,two environment artists left and haven't been replaced,In-house modeling
+C035,Valelight Games,SMB game studios,Mid-size studio,10-200,135,Korea,two environment artists left and haven't been replaced,In-house modeling
+C036,Northwick Games,SMB game studios,Mid-size studio,10-200,168,Australia,a playtest milestone is a month out,In-house modeling
+C037,Vale Interactive,SMB game studios,Indie studio,10-200,20,Western Europe,the publisher sent an AI-use questionnaire,"Hunyuan3D, self-hosted"
+C038,Pixelfield Live,SMB game studios,Mobile and live-service studio,10-200,95,Australia,600 background props are due in nine weeks,Doing nothing for now
+C039,Lanternlight Studios,SMB game studios,Mid-size studio,10-200,108,UK,two environment artists left and haven't been replaced,"Hunyuan3D, self-hosted"
+C040,Ironbound Games,SMB game studios,Mobile and live-service studio,10-200,101,US Central,a live-service content update ships every six weeks,Tripo Team Program
+C041,Pixelfield Games,SMB game studios,Indie studio,10-200,38,Australia,two environment artists left and haven't been replaced,Tripo Team Program
+C042,Mossforge Live,SMB game studios,Mobile and live-service studio,10-200,87,Japan,a playtest milestone is a month out,Outsourcing studio
+C043,Saltforge Interactive,SMB game studios,Mid-size studio,10-200,137,Australia,a playtest milestone is a month out,Hyper3D Rodin
+C044,Copperfall Entertainment,SMB game studios,Mid-size studio,10-200,176,Nordics,600 background props are due in nine weeks,Outsourcing studio
+C045,Pixelfield Entertainment,SMB game studios,Mid-size studio,10-200,144,Latin America,outsourcing quotes came in 40% over budget,Outsourcing studio
+C046,Hollowgate Games,SMB game studios,Mobile and live-service studio,10-200,73,Western Europe,the publisher sent an AI-use questionnaire,Tripo Team Program
+C047,Wrengate Games,SMB game studios,Indie studio,10-200,33,Nordics,a playtest milestone is a month out,Outsourcing studio
+C048,Oakwick Entertainment,SMB game studios,Indie studio,10-200,28,Japan,a playtest milestone is a month out,Tripo Team Program
+C049,Wrenfall Interactive,SMB game studios,Indie studio,10-200,22,Canada,a live-service content update ships every six weeks,Hyper3D Rodin
+C050,Oakgate Studios,SMB game studios,Indie studio,10-200,32,Southeast Asia,600 background props are due in nine weeks,In-house modeling
+C051,Harborwick Games,SMB game studios,Mid-size studio,10-200,108,Canada,a playtest milestone is a month out,Hyper3D Rodin
+C052,Quarry Interactive,SMB game studios,Indie studio,10-200,47,Australia,a playtest milestone is a month out,Doing nothing for now
+C053,Saltgate Games,SMB game studios,Mid-size studio,10-200,131,Canada,"nothing urgent, between milestones",Outsourcing studio
+C054,Valefield Entertainment,SMB game studios,Mid-size studio,10-200,175,Australia,an artist on a personal Meshy plan showed the team a prop,"Hunyuan3D, self-hosted"
+C055,Glintfield Live,SMB game studios,Mobile and live-service studio,10-200,93,Australia,"nothing urgent, between milestones",Doing nothing for now
+C056,Copperbound Games,SMB game studios,Indie studio,10-200,16,UK,600 background props are due in nine weeks,Outsourcing studio
+C057,Salt Play,SMB game studios,Mobile and live-service studio,10-200,82,Japan,an artist on a personal Meshy plan showed the team a prop,"Hunyuan3D, self-hosted"
+C058,Quarrybound Games,SMB game studios,Mid-size studio,10-200,131,Canada,the publisher sent an AI-use questionnaire,Doing nothing for now
+C059,Harborgate Games,SMB game studios,Mid-size studio,10-200,196,Western Europe,two environment artists left and haven't been replaced,"Hunyuan3D, self-hosted"
+C060,Lanternfall Studios,SMB game studios,Indie studio,10-200,23,Western Europe,a playtest milestone is a month out,Doing nothing for now
+C061,Harborgate Interactive,SMB game studios,Indie studio,10-200,37,Korea,the publisher sent an AI-use questionnaire,Tripo Team Program
+C062,Thornforge Mobile,SMB game studios,Mobile and live-service studio,10-200,39,Western Europe,an artist on a personal Meshy plan showed the team a prop,Tripo Team Program
+C063,Lanternstone Games,SMB game studios,Indie studio,10-200,26,Japan,an artist on a personal Meshy plan showed the team a prop,Hyper3D Rodin
+C064,Embergate Games,SMB game studios,Indie studio,10-200,39,Nordics,outsourcing quotes came in 40% over budget,"Hunyuan3D, self-hosted"
+C065,Fablelight Mobile,SMB game studios,Mobile and live-service studio,10-200,75,Western Europe,outsourcing quotes came in 40% over budget,Outsourcing studio
+C066,Northlight Entertainment,Large studios and publishers,Large game studio,"200-5,000",2087,Southeast Asia,headcount is flat but content volume is up 30%,In-house or self-hosted model (Hunyuan3D)
+C067,Prismcrest Games,Large studios and publishers,Large game studio,"200-5,000",1352,Canada,a competitor shipped a content update twice as fast,Tripo
+C068,Driftwick Games,Large studios and publishers,Large game studio,"200-5,000",4797,Latin America,the artist guild posted an anti-AI statement,AI policy says not yet
+C069,Wrencrest Entertainment,Large studios and publishers,Publisher,"200-5,000",1179,Nordics,a competitor shipped a content update twice as fast,AI policy says not yet
+C070,Wrenmark Games,Large studios and publishers,Large game studio,"200-5,000",3617,UK,the publisher contract now has a generative AI clause,Gen-AI features inside DCC tools
+C071,Ironfield Publishing,Large studios and publishers,Publisher,"200-5,000",3653,Nordics,the publisher contract now has a generative AI clause,In-house or self-hosted model (Hunyuan3D)
+C072,Hollowcrest Studios,Large studios and publishers,Large game studio,"200-5,000",2936,Nordics,the publisher contract now has a generative AI clause,AI policy says not yet
+C073,Mosslight Interactive,Large studios and publishers,Publisher,"200-5,000",4278,UK,the publisher contract now has a generative AI clause,Hyper3D Rodin enterprise
+C074,Northbound Art Services,Large studios and publishers,Art outsourcer,"200-5,000",1410,Australia,legal is drafting a 40-question AI addendum,Outsourcing vendors
+C075,Salt Publishing,Large studios and publishers,Publisher,"200-5,000",2934,UK,headcount is flat but content volume is up 30%,In-house or self-hosted model (Hunyuan3D)
+C076,North Entertainment,Large studios and publishers,Publisher,"200-5,000",3334,Japan,"nothing urgent, AI policy says not yet",AI policy says not yet
+C077,Glintwick Games,Large studios and publishers,Large game studio,"200-5,000",4133,Australia,headcount is flat but content volume is up 30%,Outsourcing vendors
+C078,Lanternmark Creative,Large studios and publishers,Art outsourcer,"200-5,000",1040,Western Europe,GDC is in March and execs want an AI story,Gen-AI features inside DCC tools
+C079,Lanternlight Publishing,Large studios and publishers,Publisher,"200-5,000",4026,Southeast Asia,the artist guild posted an anti-AI statement,Outsourcing vendors
+C080,Coppermark Studios,Large studios and publishers,Large game studio,"200-5,000",2767,US East,headcount is flat but content volume is up 30%,Tripo
+C081,Driftforge Entertainment,Large studios and publishers,Large game studio,"200-5,000",1998,UK,the artist guild posted an anti-AI statement,In-house or self-hosted model (Hunyuan3D)
+C082,Prismmark Creative,Large studios and publishers,Art outsourcer,"200-5,000",245,US West,headcount is flat but content volume is up 30%,AI policy says not yet
+C083,Harborlight Studios,Large studios and publishers,Large game studio,"200-5,000",4731,Korea,the publisher contract now has a generative AI clause,AI policy says not yet
+C084,Copperbound Entertainment,Large studios and publishers,Large game studio,"200-5,000",2753,US East,GDC is in March and execs want an AI story,Hyper3D Rodin enterprise
+C085,Embermark External Dev,Large studios and publishers,Art outsourcer,"200-5,000",770,Western Europe,a competitor shipped a content update twice as fast,AI policy says not yet
+C086,Lanternlight Art Services,Large studios and publishers,Art outsourcer,"200-5,000",1435,Latin America,an R&D lead ran Meshy on a side project,Outsourcing vendors
+C087,Valefield Interactive,Large studios and publishers,Publisher,"200-5,000",2593,Southeast Asia,"nothing urgent, AI policy says not yet",Gen-AI features inside DCC tools
+C088,Ember Creative,Large studios and publishers,Art outsourcer,"200-5,000",228,Southeast Asia,GDC is in March and execs want an AI story,Gen-AI features inside DCC tools
+C089,Quarryfall Entertainment,Large studios and publishers,Publisher,"200-5,000",2651,Canada,"nothing urgent, AI policy says not yet",Tripo
+C090,Ironwick External Dev,Large studios and publishers,Art outsourcer,"200-5,000",1336,Western Europe,GDC is in March and execs want an AI story,AI policy says not yet
+C091,Glintcrest Creative,Large studios and publishers,Art outsourcer,"200-5,000",1363,Nordics,the publisher contract now has a generative AI clause,Outsourcing vendors
+C092,Fablecrest Studios,Large studios and publishers,Large game studio,"200-5,000",461,Southeast Asia,GDC is in March and execs want an AI story,Gen-AI features inside DCC tools
+C093,Northstone External Dev,Large studios and publishers,Art outsourcer,"200-5,000",1254,Southeast Asia,legal is drafting a 40-question AI addendum,Outsourcing vendors
+C094,Saltwick Entertainment,Large studios and publishers,Large game studio,"200-5,000",2805,Latin America,legal is drafting a 40-question AI addendum,Gen-AI features inside DCC tools
+C095,Prismlight Games,Large studios and publishers,Large game studio,"200-5,000",4469,Nordics,GDC is in March and execs want an AI story,Outsourcing vendors
+C096,Rookstone Games,Large studios and publishers,Large game studio,"200-5,000",3695,Nordics,the publisher contract now has a generative AI clause,AI policy says not yet
+C097,Emberstone Entertainment,Large studios and publishers,Publisher,"200-5,000",1947,Canada,legal is drafting a 40-question AI addendum,AI policy says not yet
+C098,Fableforge External Dev,Large studios and publishers,Art outsourcer,"200-5,000",1445,Nordics,the publisher contract now has a generative AI clause,Outsourcing vendors
+C099,Pixelforge Studios,Large studios and publishers,Large game studio,"200-5,000",2528,Korea,the publisher contract now has a generative AI clause,Tripo
+C100,Glintmark Publishing,Large studios and publishers,Publisher,"200-5,000",3214,Japan,legal is drafting a 40-question AI addendum,Gen-AI features inside DCC tools

@@ -6,22 +6,34 @@ Built by [James Allgood](https://www.linkedin.com/in/jamesallgood). Companies an
 
 ## What's in the market
 
-**100 companies, split evenly across four segments.** Each company carries the buying committee its segment really has, so the market holds 355 personas.
+**100 B2B companies across three segments, eight personas.** Amateurs and students are out: the market is the business buyers a demand gen team actually has to convert. Each company carries the buying committee its segment really has, so the market holds 385 people, each one of eight personas.
 
-| Segment | Companies | Who sits on the committee | Personas |
+| Segment | Companies | Who sits on the committee | People |
 |---|---|---|---|
-| Amateurs | 25 | One person: a weekend maker, hobby game builder or adult student creator | 25 |
-| Individual pros and startups | 25 | A solo dev, freelance 3D artist, agent builder or print shop owner; product-visual startups add a developer | 30 |
-| SMB game studios (10 to 200) | 25 | Studio head, art director, environment artist, tech artist, producer | 125 |
-| Large studios and publishers (200+) | 25 | VP of Art, CTO, R&D lead, legal, InfoSec, procurement, senior artist | 175 |
+| Individual pros and startups | 30 | An indie business owner (solo game dev, product-visual founder or print shop), a freelance production artist, or a developer; product-visual startups add a developer | 35 |
+| SMB game studios (10 to 200) | 35 | Studio leader, art director, technical lead, production artist, producer | 175 |
+| Large studios and publishers (200+) | 35 | Studio leader, technical lead, art director, legal/security/procurement, production artist | 175 |
 
-**Pain is variable.** Every persona gets their role's core pains, a pain specific to their type of company where one exists (a live-service art director feels the update cadence, an outsourcer's legal team has to prove clean AI use to clients), and optional pains sampled up to 3 to 5 in total. Intensity moves with how much pressure the company is under, so two art directors feel the same problem differently. Pain levels (high, medium, low) are relative within each segment. The Talk page lists every persona's pains with a description and an intensity bar.
+**The eight personas** are bucketed from the 17 B2B roles that show up in deals. A company type can override a persona's titles and context, so a production artist reads as a senior environment artist at a publisher and as a freelance character artist on their own.
+
+| Persona | Buckets | Buying role | Can block |
+|---|---|---|---|
+| Studio leader | Studio head, VP of Art | Economic buyer | Yes |
+| Art director | Art director, R&D or innovation lead | Champion and pipeline owner | No |
+| Technical lead | Tech artist, pipeline TD, CTO | Technical evaluator | Yes |
+| Production artist | Environment, prop and senior artists, freelance 3D artists | End user and quiet veto | Yes |
+| Producer | Producer, development director | Schedule owner | No |
+| Legal, security and procurement | IP counsel, CISO, procurement | Gatekeeper | Yes |
+| Indie business owner | Solo commercial dev, product-visual founder, print shop owner | Economic buyer and user | No |
+| Developer and agent builder | API, MCP and agent developers | Technical evaluator | Yes |
+
+**Pain is variable.** Every persona gets their role's core pains, a pain specific to their type of company where one exists (a live-service art director feels the update cadence, an outsourcer's legal team has to prove clean AI use to clients, a freelance artist's clients want more options faster), and optional pains sampled up to 3 to 5 in total. Intensity moves with how much pressure the company is under, so two art directors feel the same problem differently. Pain levels (high, medium, low) are relative within each segment. The Talk page lists every persona's pains with a description and an intensity bar.
 
 **Competitors are loaded.** Tripo AI, Hyper3D Rodin, Tencent Hunyuan3D and Google Antigravity, with their positioning and feature messages in their own words, are preloaded on the Competition page. Every persona also has the tool or alternative they use today (Tripo, outsourcing, Blender by hand, a self-hosted model, "our AI policy says not yet"), and they judge every message against it.
 
-**Veto roles come from the data.** The environment artist, tech artist, studio head, legal, InfoSec, procurement, CTO and senior artist can block a deal, and the dashboard flags any message that loses them.
+**Veto roles come from the data.** The studio leader, technical lead, production artist, legal/security/procurement and developer can block a deal, and the dashboard flags any message that loses them.
 
-**Sampling is equal by segment.** A 100-persona run scores 25 from each segment, spread across the roles in each segment and across pain levels.
+**Sampling is equal by segment.** A 100-persona run scores about 33 from each segment, spread across the personas in each segment and across pain levels.
 
 ## The documents it tests
 
@@ -36,7 +48,7 @@ The brief Claude would extract from them, and the three message directions, are 
 
 The dashboard opens as if the market had run once, so every page can be explored without an API key: Compare, Score, Talk, Stress, Adoption, Competition and Channels all have results. **The demo is not model output.** Scores come from a simple, transparent heuristic in `market/make_demo_results.py` (theme fit with each persona's pains, whether the framing serves their role, proof in the message, skepticism), and reactions are canned lines per role. The dashboard says so on every page. Add a Claude API key to replace it with a live run.
 
-The demo's shape is the hypothesis a live run tests. Variant A (Pipeline) lands best overall and wins art directors, tech artists and CTOs, but it loses the roles that can block a deal: environment and senior artists, legal and InfoSec, all to Variant B (Control). Variant C (Craft) wins freelancers and artists but can't carry legal or procurement.
+The demo's shape is the hypothesis a live run tests. Variant A (Pipeline) lands best overall and wins art directors, technical leads, producers and developers, but it loses two personas that can block a deal: production artists, who prefer Variant C (Craft), and legal/security/procurement, who strongly prefer Variant B (Control). Variant C wins the artists but can't carry the technical lead or legal.
 
 ## Run it
 
@@ -59,7 +71,7 @@ Open **Settings** and paste a [Claude API key](https://console.anthropic.com). T
 
 ## Rebuild the market
 
-Everything about the market lives in `market/meshy.config.json`: segments, company types, triggers, current tools, roles, pains and competitors.
+Everything about the market lives in `market/meshy.config.json`: segments, company types, triggers, current tools, personas, pains and competitors.
 
 ```bash
 python market/generate_market.py     # writes market/output/ and app/public/data/market.json
