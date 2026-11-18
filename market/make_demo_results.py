@@ -89,61 +89,72 @@ def confidence(p, s, fit):
 # Compare: the three directions from the creative brief.
 # ---------------------------------------------------------------------------------------------
 VARIANT = {
-    "A": {"themes": {"speed": 1.0, "pipeline": 1.0, "quality": 0.45, "cost": 0.35, "privacy": 0.25, "ip": 0.2}, "proof": 0.75},
-    "B": {"themes": {"ip": 1.0, "privacy": 1.0, "compliance": 0.65, "jobs": 0.35, "craft": 0.3, "speed": 0.35, "pipeline": 0.25}, "proof": 0.65},
-    "C": {"themes": {"craft": 1.0, "jobs": 0.6, "differentiation": 0.55, "speed": 0.5, "ip": 0.3, "revenue": 0.3}, "proof": 0.3},
+    "A": {"themes": {"quality": 0.8, "pipeline": 0.6, "speed": 0.5, "differentiation": 0.3}, "proof": 0.35},
+    "B": {"themes": {"speed": 1.0, "pipeline": 1.0, "quality": 0.45, "cost": 0.35, "privacy": 0.25, "ip": 0.2}, "proof": 0.75},
+    "C": {"themes": {"ip": 1.0, "privacy": 1.0, "compliance": 0.65, "jobs": 0.35, "craft": 0.3, "speed": 0.35, "pipeline": 0.25}, "proof": 0.65},
+    "D": {"themes": {"craft": 1.0, "jobs": 0.6, "differentiation": 0.55, "speed": 0.5, "ip": 0.3, "revenue": 0.3}, "proof": 0.3},
 }
 # Positive = the framing serves this role. Negative = it reads as a threat or misses their job.
 STAKE = {
-    "A": {"studio_lead": 0.17, "art_lead": 0.4, "tech_lead": 0.25, "artist": -0.42, "producer": 0.45,
+    "A": {"studio_lead": -0.1, "art_lead": -0.15, "tech_lead": -0.1, "artist": -0.1, "producer": 0.0,
+          "risk_gate": -0.35, "indie_owner": 0.3, "developer": -0.05},
+    "B": {"studio_lead": 0.17, "art_lead": 0.4, "tech_lead": 0.25, "artist": -0.42, "producer": 0.45,
           "risk_gate": -0.18, "indie_owner": 0.23, "developer": 0.2},
-    "B": {"studio_lead": 0.35, "art_lead": 0.08, "tech_lead": 0.0, "artist": 0.23, "producer": -0.15,
+    "C": {"studio_lead": 0.35, "art_lead": 0.08, "tech_lead": 0.0, "artist": 0.23, "producer": -0.15,
           "risk_gate": 0.38, "indie_owner": 0.13, "developer": -0.1},
-    "C": {"studio_lead": 0.08, "art_lead": 0.08, "tech_lead": -0.32, "artist": 0.35, "producer": -0.25,
+    "D": {"studio_lead": 0.08, "art_lead": 0.08, "tech_lead": -0.32, "artist": 0.35, "producer": -0.25,
           "risk_gate": -0.4, "indie_owner": 0.07, "developer": -0.35},
 }
 
 # (reaction if it lands, reaction if it doesn't, objection) per role and variant. Canned lines.
 REACT = {
     "studio_lead": {
-        "A": ("Faster inside what we already run, with a case study. Worth a call.", "My artists will read 98% faster as a headcount plan.", "Team reaction"),
-        "B": ("Licensed data and opt-out is the answer my publisher wants. I can forward this.", "Good start. Do I get it in writing for the publisher?", "Needs it in the contract"),
-        "C": ("AI that serves the art, not the other way round, is the only kind I'd approve.", "Warm, but what does it do to cost per asset?", "No cost case"),
+        "A": ("If 15 million people use it, it's worth having someone look.", "A printing tool with a games line. Where's the studio story?", "No studio proof"),
+        "B": ("Faster inside what we already run, with a case study. Worth a call.", "My artists will read 98% faster as a headcount plan.", "Team reaction"),
+        "C": ("Licensed data and opt-out is the answer my publisher wants. I can forward this.", "Good start. Do I get it in writing for the publisher?", "Needs it in the contract"),
+        "D": ("AI that serves the art, not the other way round, is the only kind I'd approve.", "Warm, but what does it do to cost per asset?", "No cost case"),
     },
     "art_lead": {
-        "A": ("Straight into Unreal, finished by my team. That clears the prop backlog.", "Every tool says minutes. I've seen the cleanup.", "Cleanup work"),
-        "B": ("Helps with the team's worries, honestly, and gets legal off my back during the pilot.", "Trust is nice. Can it hit our art bar?", "Quality not shown"),
-        "C": ("My team would read this better than most AI pitches.", "Lovely line. Show me a matched set of props.", "No set consistency"),
+        "A": ("Playable is fine for a prototype sprint.", "Get your game playable is a prototype pitch. I ship games.", "Prototype, not production"),
+        "B": ("Straight into Unreal, finished by my team. That clears the prop backlog.", "Every tool says minutes. I've seen the cleanup.", "Cleanup work"),
+        "C": ("Helps with the team's worries, honestly, and gets legal off my back during the pilot.", "Trust is nice. Can it hit our art bar?", "Quality not shown"),
+        "D": ("My team would read this better than most AI pitches.", "Lovely line. Show me a matched set of props.", "No set consistency"),
     },
     "tech_lead": {
-        "A": ("Straight into our pipeline is my first question. Poly targets? API?", "Existing pipeline means our budgets and topology. Or we self-host an open model.", "No poly budgets"),
-        "B": ("Contractual no-training and retention control clears a real hurdle.", "Fine for legal. Nothing here about topology or export.", "No technical detail"),
-        "C": ("Nice sentiment.", "Marketing copy. Give me poly counts.", "No specs"),
+        "A": ("Watertight and auto-repair says they care about clean geometry.", "Watertight is for printers. Nothing about quads, poly budgets or Unreal.", "No engine specs"),
+        "B": ("Straight into our pipeline is my first question. Poly targets? API?", "Existing pipeline means our budgets and topology. Or we self-host an open model.", "No poly budgets"),
+        "C": ("Contractual no-training and retention control clears a real hurdle.", "Fine for legal. Nothing here about topology or export.", "No technical detail"),
+        "D": ("Nice sentiment.", "Marketing copy. Give me poly counts.", "No specs"),
     },
     "artist": {
-        "A": ("If it only does the crates, maybe.", "Faster for whom? 98% faster is the line they'll put in the layoff deck.", "Reads as replacement"),
-        "B": ("Licensed data and nothing trains on my work is the first thing I'd ask.", "Every vendor says licensed. Who checks?", "Doesn't trust the claim"),
-        "C": ("If I decide what it touches and the signature stays mine, I'll look.", "Nice words until the budget meeting.", "Distrusts the framing"),
+        "A": ("At least it isn't promising to replace anyone.", "AI assets for my game? That's my job they're describing.", "AI assets framing"),
+        "B": ("If it only does the crates, maybe.", "Faster for whom? 98% faster is the line they'll put in the layoff deck.", "Reads as replacement"),
+        "C": ("Licensed data and nothing trains on my work is the first thing I'd ask.", "Every vendor says licensed. Who checks?", "Doesn't trust the claim"),
+        "D": ("If I decide what it touches and the signature stays mine, I'll look.", "Nice words until the budget meeting.", "Distrusts the framing"),
     },
     "producer": {
-        "A": ("Hours not days for background props saves my milestone.", "Pilots like this eat weeks. Fixed scope?", "Pilot risk"),
-        "B": ("Legal will be happier.", "Doesn't help my schedule.", "No schedule benefit"),
-        "C": ("Team morale matters to me too.", "I need dates, not feelings.", "No schedule benefit"),
+        "A": ("Playable sooner would help a milestone.", "Nothing about schedules or a pilot.", "No schedule case"),
+        "B": ("Hours not days for background props saves my milestone.", "Pilots like this eat weeks. Fixed scope?", "Pilot risk"),
+        "C": ("Legal will be happier.", "Doesn't help my schedule.", "No schedule benefit"),
+        "D": ("Team morale matters to me too.", "I need dates, not feelings.", "No schedule benefit"),
     },
     "risk_gate": {
-        "A": ("Speed is not my department.", "Nothing about provenance, data flow or terms.", "No IP or security terms"),
-        "B": ("Licensed training data, private by default, no training on inputs. Right claims. Send the contract language and the SOC 2.", "Claims are cheap. Show me the indemnity and the audit report.", "Indemnity and audit"),
-        "C": ("Not a message for legal or security.", "Who owns the output? Where does the data go?", "Ownership unclear"),
+        "A": ("Popular, fine. Popular is not a security posture.", "No word on training data, ownership or security.", "No trust content"),
+        "B": ("Speed is not my department.", "Nothing about provenance, data flow or terms.", "No IP or security terms"),
+        "C": ("Licensed training data, private by default, no training on inputs. Right claims. Send the contract language and the SOC 2.", "Claims are cheap. Show me the indemnity and the audit report.", "Indemnity and audit"),
+        "D": ("Not a message for legal or security.", "Who owns the output? Where does the data go?", "Ownership unclear"),
     },
     "indie_owner": {
-        "A": ("98% faster is a real number. A whole set in my pipeline beats a contractor quote.", "Every tool says fast. Will the set look consistent?", "Consistency across a set"),
-        "B": ("Clean commercial rights is the first thing a store or publisher asks about.", "Rights are good. I still need assets that don't look AI-made.", "Quality not addressed"),
-        "C": ("I like that the vision stays mine.", "Feels aimed at artists. I need throughput.", "No numbers"),
+        "A": ("Print-ready straight into my slicer is exactly my problem.", "Big numbers. Does it work for my catalog?", "Generic proof"),
+        "B": ("98% faster is a real number. A whole set in my pipeline beats a contractor quote.", "Every tool says fast. Will the set look consistent?", "Consistency across a set"),
+        "C": ("Clean commercial rights is the first thing a store or publisher asks about.", "Rights are good. I still need assets that don't look AI-made.", "Quality not addressed"),
+        "D": ("I like that the vision stays mine.", "Feels aimed at artists. I need throughput.", "No numbers"),
     },
     "developer": {
-        "A": ("If the API drops meshes into my pipeline, that's the whole pitch.", "Which pipeline? Show me the API docs and rate limits.", "No API detail"),
-        "B": ("Licensed data helps when my client's legal team asks.", "Not my problem. I need cost per call and uptime.", "No cost or limits"),
-        "C": ("Cute.", "This is for artists. I build systems.", "Wrong audience"),
+        "A": ("If it's the most-used, the API is probably worth a look.", "Nothing here for developers. Where's the API?", "No API mention"),
+        "B": ("If the API drops meshes into my pipeline, that's the whole pitch.", "Which pipeline? Show me the API docs and rate limits.", "No API detail"),
+        "C": ("Licensed data helps when my client's legal team asks.", "Not my problem. I need cost per call and uptime.", "No cost or limits"),
+        "D": ("Cute.", "This is for artists. I build systems.", "Wrong audience"),
     },
 }
 
