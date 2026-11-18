@@ -20,6 +20,8 @@ function suggestions(analysis) {
 export default function TalkView({ market, analysis, live, busy, personaId, onSelect, transcripts, onSend }) {
   const [draft, setDraft] = useState('');
   const [query, setQuery] = useState('');
+  const [roleKey, setRoleKey] = useState('all');
+  const [size, setSize] = useState('all');
   const endRef = useRef(null);
   const sugg = useMemo(() => suggestions(analysis), [analysis]);
   const persona = market.personas.find((p) => p.id === personaId) ?? sugg[0]?.p ?? market.personas[0];
@@ -27,9 +29,29 @@ export default function TalkView({ market, analysis, live, busy, personaId, onSe
 
   useEffect(() => { endRef.current?.scrollIntoView({ block: 'nearest' }); }, [transcript.length, busy]);
 
-  const matches = query.trim().length > 1
-    ? market.personas.filter((p) => `${p.name} ${p.title} ${p.company} ${p.industry} ${p.role_label}`.toLowerCase().includes(query.toLowerCase())).slice(0, 8)
-    : [];
+  // Company sizes in market order (smallest first), labelled with the segment they belong to.
+  const sizes = useMemo(() => {
+    const seen = new Map();
+    for (const s of market.segments ?? []) if (!seen.has(s.size_band)) seen.set(s.size_band, s.label);
+    for (const p of market.personas) if (!seen.has(p.size_band)) seen.set(p.size_band, p.industry);
+    return [...seen].map(([band, label]) => ({ band, label }));
+  }, [market]);
+  const countFor = (r, z) => market.personas.filter((p) => (r === 'all' || p.role === r) && (z === 'all' || p.size_band === z)).length;
+
+  const filtering = roleKey !== 'all' || size !== 'all' || query.trim().length > 1;
+  const pool = market.personas.filter((p) =>
+    (roleKey === 'all' || p.role === roleKey) &&
+    (size === 'all' || p.size_band === size) &&
+    (query.trim().length < 2 || `${p.name} ${p.title} ${p.company} ${p.industry} ${p.role_label}`.toLowerCase().includes(query.toLowerCase())));
+  const matches = filtering ? pool.slice(0, 8) : [];
+
+  // Picking a persona or size jumps the chat to the first person who fits, so the page answers right away.
+  const pickFilter = (r, z) => {
+    setRoleKey(r);
+    setSize(z);
+    const first = market.personas.find((p) => (r === 'all' || p.role === r) && (z === 'all' || p.size_band === z));
+    if ((r !== 'all' || z !== 'all') && first) onSelect(first.id);
+  };
 
   const send = () => {
     if (!draft.trim() || busy) return;
@@ -52,15 +74,36 @@ export default function TalkView({ market, analysis, live, busy, personaId, onSe
           </button>
         ))}
         <label className="field" style={{ marginTop: 6 }}>
-          Or find anyone in the market
-          <input type="search" value={query} onChange={(e) => setQuery(e.target.value)} placeholder="Name, role, company or industry" />
+          Persona
+          <select value={roleKey} onChange={(e) => pickFilter(e.target.value, size)}>
+            <option value="all">All personas</option>
+            {market.roles.map((r) => {
+              const n = countFor(r.key, size);
+              return <option key={r.key} value={r.key} disabled={n === 0}>{r.label} ({n})</option>;
+            })}
+          </select>
         </label>
+        <label className="field">
+          Company size
+          <select value={size} onChange={(e) => pickFilter(roleKey, e.target.value)}>
+            <option value="all">All sizes</option>
+            {sizes.map((z) => {
+              const n = countFor(roleKey, z.band);
+              return <option key={z.band} value={z.band} disabled={n === 0}>{z.band} employees ({n})</option>;
+            })}
+          </select>
+        </label>
+        <label className="field">
+          Or search by name
+          <input type="search" value={query} onChange={(e) => setQuery(e.target.value)} placeholder="Name, title, company or industry" />
+        </label>
+        {filtering && <p className="note" style={{ margin: 0 }}>{pool.length === 0 ? 'No one matches. Try another persona or size.' : `${pool.length} match${pool.length === 1 ? '' : 'es'}${pool.length > matches.length ? `, showing ${matches.length}` : ''}.`}</p>}
         {matches.map((p) => (
-          <button key={p.id} className="persona-option" aria-pressed={p.id === persona.id} onClick={() => { onSelect(p.id); setQuery(''); }}>
+          <button key={p.id} className="persona-option" aria-pressed={p.id === persona.id} onClick={() => onSelect(p.id)}>
             <Avatar name={p.name} />
             <div>
               <div className="name">{p.name}</div>
-              <div className="meta">{p.title} at {p.company}</div>
+              <div className="meta">{p.title} at {p.company}, {p.size_band} employees · {p.pain_level} pain</div>
             </div>
           </button>
         ))}
